@@ -16,7 +16,7 @@ body {
 
 .header {
     position: relative;
-    background-image: url(https://i0.wp.com/www.soundsgoodwebzine.com/wp-content/uploads/2025/07/6DCB24D0-AFE8-4E55-9C75-5DA9F02D9788-scaled.jpg); /* Replace with your image URL */
+    background-image: url(images/IMG_7110.JPG); /* Replace with your image URL */
     background-size: cover;  /* Ensures the image covers the entire header */
     background-position: center;
     height: 400px;  /* Adjust the height as needed */

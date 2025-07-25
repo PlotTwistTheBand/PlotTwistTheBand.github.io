@@ -1,6 +1,8 @@
 /* Import Google Fonts (Roboto) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+
 /* Apply the font to the entire body */
 body {
     font-family: 'Roboto', sans-serif;
@@ -11,8 +13,65 @@ body {
     color: #333;
 }
 
+
+.header {
+    position: relative;
+    background-image: url('your-image.jpg'); /* Replace with your image URL */
+    background-size: cover;  /* Ensures the image covers the entire header */
+    background-position: center;
+    height: 400px;  /* Adjust the height as needed */
+    color: white;  /* Text color */
+    text-align: center;  /* Centers the text */
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centers the content */
+    width: 100%;
+}
+
+/* Heading */
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Navbar Styles */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);  /* Hover effect */
+    border-radius: 5px;
+}
+
+/* Optional: Make the navbar fixed at the top */
+.navbar {
+    position: absolute;
+    bottom: 20px;  /* Positions navbar at the bottom of the header */
+    width: 100%;
+}
+
 /* You can apply it to other specific elements as well */
-h1, h2, h3 {
+h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 

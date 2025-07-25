@@ -16,7 +16,7 @@ body {
 
 .header {
     position: relative;
-    background-image: url(https://PlotTwistTheBand.github.io/images/IMG_7110.JPG); /* Replace with your image URL */
+    background-image: url('https://PlotTwistTheBand.github.io/images/IMG_7110.JPG'); /* Replace with your image URL */
     background-size: cover;  /* Ensures the image covers the entire header */
     background-position: center;
     height: 400px;  /* Adjust the height as needed */

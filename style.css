@@ -20,7 +20,7 @@ body {
     background-size: cover;  /* Ensures the image covers the entire header */
     background-position: center;
     height: 400px;  /* Adjust the height as needed */
-    color: white;  /* Text color */
+    color: rgb(100, 0, 0);  /* Text color */
     text-align: center;  /* Centers the text */
 }
 

@@ -1,0 +1,508 @@
+/* CSS STYLESHEET FOR PLOT TWIST WEBSITE DIFFERENT SECTIONS
+  NavBar, Home Section, Music Section, Custom Buttons, Footer, and Responsive Styles
+*/
+
+
+/*-----------------------------------------------------------------------------------------
+  GOOGLE FONTS            
+-------------------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&family=Limelight&family=Outfit:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*-----------------------------------------------------------------------------------------
+  TOP NAVIGATION BAR TYPOGRAPHY         
+-------------------------------------------------------------------------------------------*/
+
+.navbar .nav-link {
+  color: var(--primary-color);
+  font-size: var(--menu-font-size);
+  font-family: var(--navbar-font-family);
+  font-weight: var(--font-weight-xbold);
+  font-style: normal;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--white-color);
+}
+
+.navbar .dropdown-item {
+  color: var(--p-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-medium);
+}
+
+/*-----------------------------------------------------------------------------------------
+  GENERAL SECTIONS SETUPS TYPOGRAPHY   
+-------------------------------------------------------------------------------------------*/
+
+.back-top-icon {
+  font-size: var(--h2-font-size);
+}
+
+.badge {
+  background-color: var(--primary-color);
+  font-size: 12px;
+  position: relative;
+  bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--primary-color);
+}
+
+/*-----------------------------------------------------------------------------------------
+  MAIN - HOME SECTION TYPOGRAPHY   
+-------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------------
+  BUTTONS AND BUTTON LIKE ITEMS
+-------------------------------------------------------------------------------------------*/
+.song-btn {
+  background: var(--transparent);
+  line-height: normal;
+  border: .5px solid var(--secondary-color);
+  border-radius: var(--border-radius-xsm);
+  padding-top: 0.1rem;
+  /* 4px */
+  padding-bottom: 0.17rem;
+  /* 4px */
+  padding-left: .8rem;
+  /* 24px */
+  padding-right: .8rem;
+  transition: all 0.3s;
+  font-size: x-small;
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-thin);
+  font-family: var(--monotype-font-family);
+  text-transform: capitalize;
+}
+
+.song-btn:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+
+
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------
+ARTICLES CONTAINERS SETUP
+-------------------------------------------------------------------------------------------*/
+.article-container {
+  color:var(--drkm-text-color);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 9;
+  
+}
+.article-img-cont{
+  position: relative;
+  overflow: hidden;
+  max-height: 100%;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+.article-img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+.article-img-overlay {
+  background: rgba(0, 0, 0, 0.496);
+  display: flex;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+.article-img-cont:hover .article-img-overlay {
+  opacity: 1;
+}
+.article-img-overlay i {
+  color: white;
+  font-size: 5rem;
+}
+.article-text h3 {
+  font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-xbold);
+  font-size: var(--h5-font-size);
+  line-height: 1;
+  display: flex;
+  align-items: center; /* vertical centering */
+  gap: 0.5rem;         /* space between title and icon */
+}
+.article-text p {
+  font-family: var(--monotype-font-family) !important;
+  line-height: 1.3;
+  font-size: var(--lyrics-font-size);
+}
+
+/*-----------------------------------------------------------------------------------------
+BLOGNAV
+-------------------------------------------------------------------------------------------*/
+.search-container{
+  position: relative;
+  padding-top: 80px;
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.search-container .social-media{
+  display: flex;
+  justify-content: end;
+}
+.searchbar{
+  justify-content: end;
+  display: flex;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+.search-container .search {
+  background: rgba(65, 65, 65, 0.305); 
+  border: .25px solid var(--drkm-cont3-color);
+  border-top-left-radius: var(--border-radius-medium) ;
+  border-bottom-left-radius: var(--border-radius-medium);
+  width: 320px;
+}
+.search-container .search input[type=text] {
+  background: var(--transparent);
+  color: var(--drkm-text-color);
+  border: none;
+  width: 100%;
+  height: 32px;
+  padding: 0 15px;
+ 
+}
+.search-container .search input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+ 
+}
+.search-container .search button {
+  background: var(--transparent);
+  color: var(--drkm-text-color); 
+  border: none;
+  border-color: transparent;
+  border-top-right-radius: var(--border-radius-medium) ;
+  border-bottom-right-radius: var(--border-radius-medium);
+  width: 70px;
+  height: 32px;
+  padding-right: 10px;
+}
+.search-container .search button:hover {
+  background: rgba(89, 16, 16, 0.47);
+}
+/*--------------------------------------------------------------------------------*/
+.navigation-section {
+  position: relative;
+  padding-top: 70px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+@media screen and (max-width: 576px) {
+  .navigation-section {
+    padding-top: 100px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .blog-navbar .nav-item {   
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+.blognav-banner {
+  background-image: url("../images/music_1.jpeg");
+  height: 450px;
+  padding:0;
+}
+.blognav-banner img {
+  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+
+}
+.blog-nav  { 
+  background: transparent;
+  border-top: 1px solid white;
+  max-width: 100%;
+  height: auto;
+  z-index: 9999999;
+  overflow-x: auto;      /* allow horizontal scroll */
+  overflow-y: hidden;    /* hide vertical scroll */
+  white-space: nowrap;   /* prevent line breaks inside items */
+  
+  
+}
+.blognavtext {
+  color: black;
+  background: white;
+  width: fit-content;
+  padding: 1px !important;
+  margin-bottom: 0 !important;
+}
+.blognavtext p {
+  color: black;
+  font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-xbold);
+  font-size: 14px;
+  margin-bottom: 0 !important;
+}
+.blog-navbar {  
+  background: var(--black-color);
+  z-index: 9999999;
+  top:0;
+ 
+  box-sizing: content-box; /* important to avoid affecting width */
+  
+
+}
+.blog-navbar .nav {  
+  justify-content: flex-start;
+  flex-wrap: nowrap;     /* keep items in one row */
+  display: flex;
+  overflow-x: auto;      /* enable scroll on inner nav if needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  scrollbar-width: thin;      /* Firefox thin scrollbar */
+  scrollbar-color: rgba(128, 128, 128, 0.426) transparent;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1200px) {
+  .blog-navbar .nav {  
+  justify-content: center !important;}
+}
+.blog-navbar .nav-item {  
+  background: transparent !important;
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--primary-color);
+  flex: 0 0 auto;        /* prevent items from shrinking */
+  z-index: 9999999;
+  top:0;
+}
+.blog-navbar .nav-link {  
+  height: 6.7rem;
+  width: 6.7rem;
+  background: transparent !important;
+  border-radius: var(--border-radius-large);
+  padding: 0% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blog-navbar .nav-link .card {  
+  
+  width: 6.5rem !important;
+  height: 6.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;   /* <-- make it a perfect circle */
+  overflow: hidden;                /* ensures inner content doesn't overflow corners */
+  display: flex;                   /* optional, for centering */
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+}
+.blog-navbar .card-inner {
+  border-radius: var(--border-radius-large) !important;
+}
+.blog-navbar .card-front, .blog-navbar .card-back {
+  background: white !important;
+  padding-top: 0px;
+  border-radius: var(--border-radius-large) !important;
+    font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-xbold);
+  font-size: 14px;
+}
+.blog-navbar .card-front {color: white !important; background: rgb(11, 11, 11) !important;}
+.blog-navbar .card-back {
+  background: white !important;
+  color: black !important;
+}
+/*--------------------------------------------------------------------------------*/
+.news-section {
+  position: relative;
+  padding-top: 0rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.red {
+  background: red !important;
+}
+.pink {
+  background: pink !important;
+}
+.purple {
+  background: plum !important;
+}
+.yellow {
+  background: yellow !important;
+}
+@media screen and (max-width: 576px) {
+  .news-section {
+    padding-top: 100px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+
+@media (min-width:992px) { 
+  .latest-social {
+    padding-right:1.5rem;
+  }
+}
+@media (max-width:991.98px) { 
+  .latest-social {
+    padding-right:0rem !important;
+  }
+  
+
+}
+.blog-container {
+  color:var(--drkm-text-color);
+  border-top: 1px solid white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.share-btn {
+  border: none;
+  border-radius: var(--transparent);
+  color: var(--primary-color);
+  background: transparent;
+  font-size: var(--h6-font-size);
+}
+
+.share-btn:hover {
+  border: none;
+  border-radius: var(--transparent);
+  color: var(--drkm-cont1-color);
+}
+
+.small-article .article-container {
+font-family: var(--monotype-font-family);
+display: flex;             /* make children inline */
+  align-items: flex-start;   /* vertical alignment of text and image */
+  gap: 1rem;                 /* optional spacing between text and image */
+  flex-wrap: nowrap; 
+
+}
+.small-article .article-text {
+font-family: var(--monotype-font-family);
+display: block;
+flex: 1 1 70%; 
+}
+.small-article .article-text a{
+font-size: 14px;
+}
+.small-article .article-text p {
+font-size: 12px;
+}
+
+.small-article .article-img-cont {
+display: block;
+aspect-ratio: 1 / 1;
+flex: 1 1 30%; 
+}
+
+.small-article .share-btn {
+  font-size: 12px;
+  align-content: top;
+  padding:0;
+  margin-top: 0;
+}
+.divider-line {
+   border-bottom: 1px solid rgba(255, 255, 255, 0.422) ;
+}
+
+
+.latest-social p {
+font-size: 10px;
+font-family: var(--monotype-font-family);
+text-align: justify;
+}
+
+.latest-social .article-img-cont{
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+.latest-social .article-img-overlay {
+  background: rgba(0, 0, 0, 0.751);
+  opacity: 1;
+}
+.latest-social .article-img-cont:hover .article-img-overlay {
+  background: rgba(10, 10, 10, 0.891);
+  opacity: 1;
+}
+
+.latest-social .article-img-overlay i {
+  color: white;
+  font-size: 2rem;
+}
+
+
+.events-section, .tours-section {
+  position: relative;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: white;
+  font-family: var(--monotype-font-family);
+}
+
+@media screen and (max-width: 576px) {
+  .events-section, .tours-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

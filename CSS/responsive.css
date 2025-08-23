@@ -1,0 +1,166 @@
+/* RESPONSIVE STYLES
+
+Z-INDEXES
+ z-index: 9999;     Navbar            
+ z-index: 9998;     Navbar.container-fluid
+ z-index: 9997;     Navbarlogo 
+ z-index: 9999;       Footer-toggle-btn
+ z-index: 9998;       Footer-section 
+ z-index: 1;        Grid-logo    
+  
+
+
+
+Widths:
+360px       iPhone 12Mini - 13Mini
+375px       iPhone 11Pro
+*/
+
+
+
+
+/* @media screen and (max-width: 390px)
+390px - 844px      iPhone 12 - 12Pro - 13 - 13Pro 14
+393px - 852px      iPhone 14Pro - 15 - 15Pro - 16 -16Pro
+*/
+
+/* @media screen and (max-width: 430px)
+414px - 896px      iPhone 11 - 11ProMax
+430px - 932px      iPhone 12ProMax 13ProMax 14ProMax  15ProMax 15Plus 16Plus 16ProMax
+430px - 926px      iPhone 14Plus
+*/
+
+/* @media screen and (max-width: 768px) = COL-MD
+768px - 1024px      iPad 8-9Gen   
+*/
+
+/* @media screen and (max-width: 834px)
+820px - 1180px      iPad 10Gen - Air4-5Gen
+834px - 1194px      iPad Pro11"3-4Gen
+*/
+
+/* @media screen and (max-width: 1024px)
+1024px - 1366px      iPad Pro12.9"3-4Gen
+*/
+
+
+@media screen and (max-width: 991px) { 
+    .navbar{
+     background: black !important;
+    }
+    .navbar .nav-item {
+     margin-top: 3rem;
+    }  
+    .navbar .nav-link {
+     display: flex;
+     justify-content: center;
+     margin: 0 !important; 
+     border-radius: var(--border-radius-small);
+     border: .7px solid rgba(255, 255, 255, 0.513) ;
+     background: rgba(9, 9, 9, 0.491);
+    }
+    .navbar .card {
+     padding: 0 !important; margin:0 !important;
+     border: none !important;
+    }
+    .navbar .card-front, .navbar .card-back {
+     background: transparent !important;
+     padding: 0 !important; margin:0 !important;
+    }
+     .navbar .card-front {
+     position: relative !important;
+    }
+    .footer-toggle-btn .card {
+     background: black;
+    } 
+
+    .music-page .navbar {
+     background-color: transparent !important;
+     border-image: none;
+    }
+ 
+    .music-page .navbar .card {
+     width: auto; height: auto;
+    }
+    .music-page .navbar .nav-item {
+     margin-top:.5rem;
+     padding: 0%;
+     display: flex;
+     justify-content: start;
+     width: fit-content;
+    }
+    .music-page .navbar .nav-link {
+     font-family: var(--sidebar-font-family);
+     justify-content: start;
+     padding: 0 !important; 
+     text-transform: none;
+     font-weight: var(--font-weight-normal);
+     border-color: transparent;
+     font-size: 16px;
+    }
+  
+      
+ 
+ 
+}
+/* Responsive Homepage for tablets: 
+    iPad 10Gen
+    iPadAir 4-5Gen
+     iPad 8Gen - 9Gen - Mini
+    iPad 10Gen
+    iPadAir 4-5Gen
+*/
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+    .navbar .nav-item {
+     padding: 0rem 9rem;
+    }                     
+    .navbar .nav-link {
+     padding: 2.2rem 0rem !important;
+     font-size: 24px;
+    }
+    .footer-toggle-btn .card {
+     width: 50px; height: 70px;
+     font-size: 50px;
+    } 
+    .social-icon-item {
+     margin: 0rem 1rem;
+    }
+    .social-icon-link {
+     font-size: 18px;
+     width: 35px; height: 35px;
+     line-height: 35px;
+    }
+}
+
+/* Responsive Homepage phones and small small tablets: 
+    iPhone 11 - 11ProMax
+    iPhone 12 - 12Pro - 12ProMax
+    iPhone 13 - 13Pro - 13ProMax
+    iPhone 14 - 14Pro - 14ProMax - 14Plus
+    iPhone 15 - 15Pro - 15ProMax - 15Plus
+    iPhone 16 - 16Pro - 16ProMax - 16Plus  
+*/
+@media screen and (max-width: 767.98px) { 
+    .navbar .nav-item {
+     padding: 0rem 2rem;
+    } 
+      
+   
+    .navbar .nav-link {
+     padding: 1.5rem 0rem !important;
+    }
+    .social-icon-item {
+     margin: 0rem .5rem;
+    }
+    .copyright {
+     padding: 0rem 3rem !important;
+    }
+    .copyright-text {
+     font-size: 14px !important; 
+    }
+    .footer-section .nav-link{
+     font-size: 14px !important; 
+    }
+}
+
+

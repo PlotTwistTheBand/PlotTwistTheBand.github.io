@@ -12,10 +12,10 @@ galleryMask.addEventListener('scroll', () => {
   progress = Math.min(Math.max(progress, 0), 1); // clamp 0-1
 
   // Apply zoom and darken immediately as scrolling starts
-  const scale = 1 - progress * 0.2;       // 1 -> 0.9
-  const brightness = 1 - progress * 11;  // 1 -> 0.5
+  const scale = 1 - progress * 0.1;       // 1 -> 0.9
+  const brightness = 1 - progress * 2;  // 1 -> 0.5
 
   gallery.style.transform = `scale(${scale})`;
   gallery.style.filter = `brightness(${brightness})`;
-  overlay.style.opacity = `${1 - progress * 0.7}`;
+  overlay.style.opacity = `${1 + progress * 0.7}`;
 });

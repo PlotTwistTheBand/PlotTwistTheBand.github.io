@@ -715,10 +715,7 @@ MUSIC SECTION STRUCTURE
 .layout-switcher-sidebar {
   display: flex;
   position: relative;
-  height: 30%;
-  justify-content: start; align-items: end;
-  margin: .2rem .9rem;
-  padding: 0rem;
+  margin: 0rem .5rem;
   gap: 1rem;
 }
 .layout-switcher-sidebar button {

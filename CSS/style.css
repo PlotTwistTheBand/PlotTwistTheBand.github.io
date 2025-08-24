@@ -428,7 +428,7 @@ SITE FOOTER
 .footer-section .row{
   background-color: black;
   border-radius: var(--border-radius-medium);
-  border-top: 1px solid var(--white-color);
+  border-top: 1px solid var(--dark-color);
 }
 
 .footer-section .social-icon {
@@ -682,16 +682,16 @@ MUSIC SECTION STRUCTURE
 -------------------------------------------------------------------------------------------*/
 .wrapper {
   position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
   display:flex;
+  margin: 0; padding: 0;
+  width: 100%;
 }
 .sidebar {
   background: transparent;
   position: fixed;
   float: left;
-  width: 100%; 
+  width: 350; 
+  height: 100%;
   padding: 1.5rem;
   flex-shrink: 0;
   z-index: 9;
@@ -699,11 +699,10 @@ MUSIC SECTION STRUCTURE
 .sidebar-text {
   display: flex; flex-direction: column;
   visibility: visible;
- 
-  height: 70%;
+  height: 100%;
   overflow: hidden; overflow-y: auto;
-  scrollbar-width: thin;       /* Firefox thin scrollbar */
-  scrollbar-color: gray transparent; /* Firefox scrollbar colors */
+  scrollbar-width: thin;      
+  scrollbar-color: gray transparent; 
 }
 .sidebar-divider {
   border-bottom: .5px solid transparent;
@@ -748,11 +747,20 @@ MUSIC SECTION STRUCTURE
 .sidebar .nav-link.active, .sidebar .nav-link:hover {
   color: var(--white-color);
 }
+.music-container {
+  background: var(--transparent);
+  border-radius: var(--border-radius-xsm);
+  color:var(--drkm-text-color);
+  padding: 2rem;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 9;
+  max-width: 1200px;
+}
 .wrapper .music-container {
   position: relative;
-  width: 100%;
   flex-grow: 1;
-  padding: 2rem;
   float: left;
 }
 .wrapper .sidebar, .wrapper .music-container {
@@ -761,67 +769,12 @@ MUSIC SECTION STRUCTURE
   -o-transition: margin 200ms ease-out;
   transition: margin 200ms ease-out;
 }
-
-/*------------------------------------------------------------------------------------------*/
-@media (min-width: 992px) { /*sidebar before it hides*/
-  .wrapper .sidebar {
-    width: 350px; height: 100%;
-  }
-  .wrapper .music-container {
-    width: calc(100% - 350px);
-    margin-left: 350px;
-  }
-}
-@media (max-width: 991.98px) { /*sidebar when it hides left*/
-  .wrapper .sidebar {
-    background: black;
-    width: 250px; height: 100%;
-    transform: translateX(-100%); /* fully offscreen */
-    transition: transform 0.2s ease-in-out;
-    z-index: 99;
-    border-right: 2px solid transparent;
-    border-image: linear-gradient(to bottom, transparent 20%, var(--secondary-color)) 1;
-    border-image-slice: 1;
-  }
-  .wrapper .sidebar.active {
-    margin-left: 0px;
-    transform: translateX(0);
-  }
-  .wrapper .sidebar.active .sidebar-divider {
-    visibility: visible !important;
-  }
-  .wrapper .music-container {
-    position: relative;
-    width: 90%;
-    margin-right: 1.5rem;
-    float: right;
-  }
-}
-@media (max-width: 576px) {
-  .wrapper .music-container {
-    padding: 20px;
-  }
+.album-overview .music-container{
+ min-height: 70vh;
+ padding: 0rem !important;
+ margin-top: 2rem;
 }
 /* GENERAL CONTAINERS -----------------------------------------------------------------------*/
-.music-container {
-  background: var(--transparent);
-  border-radius: var(--border-radius-xsm);
-  color:var(--drkm-text-color);
-  margin-bottom: 1rem;
-  cursor: pointer;
-  width: 100%;
-  overflow: hidden;
-  z-index: 9;
-  max-width: 1100px;
-}
-.album-image {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s;
-  aspect-ratio: 1 / 1;
-}
 .album-thumbnail {
   background-color: var(--transparent);
   border-radius: var(--border-radius-xsm);
@@ -832,16 +785,14 @@ MUSIC SECTION STRUCTURE
   cursor: pointer;
 }
 .album-thumbnail::before {
- content: "";
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.19), rgba(93, 0, 0, 0.149));
+  border-radius: var(--border-radius-xsm);
   z-index: 1;
   pointer-events: none;
-  border-radius: var(--border-radius-xsm);
 }
 .album-thumbnail:hover .album-image {
   transform: scale(1.2);
@@ -849,61 +800,44 @@ MUSIC SECTION STRUCTURE
 .album-thumbnail:hover::before {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.677));
 }
-.song-btn {
-  background: var(--transparent);
-  line-height: normal;
-  border: .5px solid var(--secondary-color);
-  border-radius: var(--border-radius-xsm);
-  padding-top: 0.1rem;    /* 4px */
-  padding-bottom: 0.17rem; /* 4px */
-  padding-left: .8rem;    /* 24px */
-  padding-right: .8rem;
+.album-image {
+  display: block;
+  object-fit: cover;
+  width: 100%; height: 100%;
   transition: all 0.3s;
-  font-size: x-small;
-  color: var(--secondary-color);
+  aspect-ratio: 1 / 1;
+}
+.album-container-text h6 {
+  font-size: 26px;
   font-weight: var(--font-weight-thin);
+  color: white;
+  margin-bottom: .5rem;
+  line-height: 1;
+}
+.song-btn {
+  color: var(--secondary-color);
   font-family: var(--monotype-font-family);
-  text-transform: capitalize;
+  font-weight: var(--font-weight-xthin);
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  border-radius: var(--border-radius-xsm);
+  border: .5px solid var(--secondary-color);
+  margin: 1rem 0rem .17rem;
+  transition: all 0.3s;
 }
 .song-btn:hover {
-  background: var(--primary-color);
+  background: var(--drkm-primary-color);
   color: var(--white-color);
 }
-/* MUSIC PAGE MAIN [ALBUM OVERVIEW] ---------------------------------------------------------*/
-.album-overview .music-container{
- min-height: 70vh;
-}
-.album-overview h6{
- font-weight:200;
-}
-
-.music-page #album-container.list-view {
-  display: block; 
-}
-.music-page #album-container.list-view li {
-  display: block;
-  gap: 15px;
-  width: 100%;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid white;
-}
-.music-page #album-container.list-view a {
-  display: flex;
-}
-.music-page #album-container.list-view .album-thumbnail {
-  display: flex;
-  flex: 0 0 auto;
-}
-.music-page #album-container.list-view .album-container-text{
-  display: inline-block;
-  margin-left:  3rem;
-  margin-top: 0;
-}
+/* MUSIC PAGE MAIN [LIST/GRID RESPONSIVENESS] --------------------------------------------------*/
 .music-page #album-container.grid-view {
   display: relative; 
 }
 .music-page #album-container.grid-view li {
   display: block !important;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .music-page #album-container.grid-view li[style*="display: none"] {
   display: none !important;
@@ -932,14 +866,31 @@ MUSIC SECTION STRUCTURE
 .music-page #album-container.grid-view .album-thumbnail::after {
   content: none !important; /* Remove any leftover pseudo-elements */
 }
-@media (min-width: 1600px) {#album-container.list-view .album-thumbnail {width: 18%;}}
-@media (min-width: 1500px) {#album-container.list-view .album-thumbnail {width: 20%;}}
-@media (min-width: 1300px) {#album-container.list-view .album-thumbnail {width: 22%;}}
-@media (min-width: 1200px) {#album-container.list-view .album-thumbnail {width: 23%;}}
-@media (min-width: 992px) {#album-container.list-view .album-thumbnail {width: 25%;}}
-@media (max-width: 991.98px) {#album-container.list-view .album-thumbnail {max-width: 25%; min-width: 22%;}}
-@media (max-width: 767px){ #album-container.list-view .album-thumbnail {max-width: 31%; min-width: 30%;}}
-@media (max-width: 576px) {#album-container.list-view .album-thumbnail {max-width: 40%;}}
+.music-page #album-container.list-view {
+  display: block; 
+  width: 100%;
+  
+}
+.music-page #album-container.list-view li {
+  display: block;
+  width: 100%;
+  padding: 1rem 1rem;
+  margin-bottom: 0rem;
+  border-bottom: .5px solid white;
+}
+.music-page #album-container.list-view a {
+  display: flex;
+}
+.music-page #album-container.list-view .album-thumbnail {
+  display: flex;
+  flex: 0 0 auto;
+  max-width: 25%;
+}
+.music-page #album-container.list-view .album-container-text{
+  display: inline-block;
+  margin-left:  3rem;
+  margin-top: .5rem;
+}
 /* MUSIC DETAILS AND CREDITS SETUP--------------------------------------------------------*/
 .music-details .music-container {
   background-color: var(--drkm-primary-color);
@@ -1068,10 +1019,11 @@ MUSIC SECTION STRUCTURE
   display: flex; 
 }
 .lyrics-wrapper {
-  color: black;
   color: var(--drkm-cont3-color);
   font-size: var(--p-font-size);
-  font-weight: var(--font-weight-thin);
+  font-weight: var(--font-weight-light);
+  text-align: justify;
+  line-height: 1;
   white-space: pre-wrap; 
   max-height: 500px; 
   padding-right: 2rem;         

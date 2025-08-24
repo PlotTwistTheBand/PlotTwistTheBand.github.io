@@ -22,9 +22,9 @@
 
     <link href="../../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../../CSS/bootstrap-icons.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c7507aa6e3.js" crossorigin="anonymous"></script>
     <link href="../../CSS/typography.css" rel="stylesheet">
     <link href="../../CSS/style.css" rel="stylesheet">
+    <link href="../../CSS/responsive.css" rel="stylesheet">
 </head>
 
 
@@ -282,13 +282,13 @@
 
     </header>
 
-    <main> <!-- SIDEBAR AND MUSIC INFO -->
+    <main>
         <section class="wrapper" id="music releases">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row p-0">
 
                     <!--SIDEBAR-->
-                    <div class="sidebar p-4" id="sidebarNav">
+                    <div class="sidebar" id="sidebarNav">
                         <div class="sidebar-text d-flex flex-column justify-content-center h-100">
                             <!-- SCROLL DOWN LINKS -->
                             <div class="sidebar-divider "></div>
@@ -303,25 +303,25 @@
                     </div>
                     
                     <!-- MUSIC DETAILS -->
-                    <section class="music-details mt-5 pt-5" id="section_1">
-                        <div class="music-container container-fluid row g-0" id="music-details">
+                    <section class="music-details mt-5 pt-5 mb-4" id="section_1">
+                        <div class="music-container p-5" id="music-details">
                             <div class="row g-3">
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-thumbnail ms-3">
+                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-thumbnail">
                                         <img class="album-image img-fluid h-100"
                                             src="../../images/AlbumCover_Better_1x1.jpeg" alt="">
                                     </div>
                                 </div>
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-container-text ms-3">
+                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-container-text mt-3">
                                         <h5 class="text-uppercase mb-1">BETTER</h5>
                                         <div class="d-flex mt-3 mb-1">
                                             <p class="song-btn">2025</p>
                                             <p class="song-btn ms-4 text-uppercase">single</p>
                                         </div>
-                                        <div class="border-bottom py-2 mb-5 "></div>
+                                        <div class="border-bottom py-2 mb-5"></div>
                                         <h6 class="mb-4 mt-5 pt-4">DESCRIZIONE</h6>
-                                        <p class="mb-0 ">
+                                        <p class="mb-0">
                                             Con una successione di ritmi sorprendenti, ed un testo accuratamente
                                             scolpito, “Better” racconta la storia di un’infatuazione con
                                             allusioni
@@ -339,8 +339,8 @@
                         </div>
                     </section>
                     <!-- STREAMING SERVICES -->
-                    <section class="streaming-services" id="section_2">
-                        <div class="music-container container row g-0">
+                    <section class="streaming-services mb-4" id="section_2">
+                        <div class="music-container">
                             <ul class="row g-3 list-unstyled">
                                 <!-- SPOTIFY -->
                                 <li class="col-xl-4 col-lg-6 col-md-6 col-12">
@@ -428,43 +428,36 @@
                         </div>
                     </section>
                     <!-- YOUTUBE CAROUSEL-->
-                    <section class="music-video-carousel" id="section_3">
+                    <section class="music-video-carousel mb-3" id="section_3">
                         <div class="music-container p-0">
-                                <!-- Slides -->
-                                <div class="carousel-inner mb-3">
-                                    <div class="carousel-item active">
-                                        <iframe src="https://www.youtube.com/embed/LoPJlX9OGQ8" allowfullscreen></iframe>
-                                    </div>
+                            <!-- Slides -->
+                            <div class="carousel-inner mb-3">
+                                <div class="carousel-item active">
+                                    <iframe src="https://www.youtube.com/embed/LoPJlX9OGQ8" allowfullscreen></iframe>
                                 </div>
-                                <!-- SPOTIFY EMBED-->
-                                <div class="container-fluid p-0 mb-0">
-                                    <iframe data-testid="embed-iframe" style="border-radius:12px"
-                                        src="https://open.spotify.com/embed/album/3OOGWI6MO37f7LddbM7AQZ?utm_source=generator&theme=0"
-                                        width="100%" height="152" frameBorder="0" allowfullscreen=""
-                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-                                    </iframe>
-                                </div>
-                    
-                        
+                            </div>
+                            <!-- SPOTIFY EMBED-->
+                            <div class="container-fluid p-0 mb-0">
+                                <iframe data-testid="embed-iframe" style="border-radius:12px"
+                                    src="https://open.spotify.com/embed/album/3OOGWI6MO37f7LddbM7AQZ?utm_source=generator&theme=0"
+                                    width="100%" height="152" frameBorder="0" allowfullscreen=""
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
-                    
                     </section>
                     <!-- MUSIC LYRICS-->
-                    <section class="music-lyrics mt-0" id="section_4">
+                    <section class="music-lyrics mt-0 mb-4" id="section_4">
                         <div class="music-container" id="music-details">
                             <div class="row mt-1">
                                 
-                                <div class="album-container-text ms-3 mt-3 ">
-                                    <p class="text-uppercase mb-1 ">TESTO</p>
-                                </div>
-                                <div class="music-line py-2 mb-2"></div>
+                            
                                 <!-- SONG FILTER LIST -->
                                 <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-12 mt-3">
                                     <div class="lyrics-title container mt-0">
                                     <ul class="nav">
                                         <li class="nav-item"><a class="nav-link" data-song="song-a" href="#">1. Song
-                                             Sample A</a></li>
-                                        
+                                             Sample A</a></li> 
                                     </ul>
                                     </div>
                                 </div>
@@ -473,21 +466,28 @@
                                     <div class="lyrics-wrapper">
 <pre id="lyrics-text">
 Io non imparo
-Tentato dal diavolo prendo le fiches, vado al solito tavolo
-Ma, se poi vedo te, mollo le carte e saluto il croupier
+Tentato dal diavolo prendo le fiches, 
+vado al solito tavolo
+Ma, se poi vedo te, 
+mollo le carte e saluto il croupier
 Perché tu, sei rarissima altrove
 Queen come te ce ne sono in Poker
-Vuoi giocare con me? (E allora stammi più vicino)
+Vuoi giocare con me? 
+(E allora stammi più vicino)
 Che mi sento fortunato ogni volta che accanto ho te
 Lo sai bene messi insieme l'asso e la regina fanno Blackjack
 E allora, dammi questa mano
 Non dal mazzo parlo di te
 
-Lo ammetto ho un problema col gioco, è un brivido estivo
+Lo ammetto ho un problema col gioco, 
+è un brivido estivo
 L'unico modo per sentirmi vivo
-Entro in Casinò per fare casino, mi manca quel frеno per dir "mi ritiro"
-Ma con i soldi fatti alla sala me ne vado in Nеvada a fare ancora più debiti
-Ma baby questo tu già lo sai, eppure non mi disprezzi
+Entro in Casinò per fare casino, 
+mi manca quel frеno per dir "mi ritiro"
+Ma con i soldi fatti alla sala 
+me ne vado in Nеvada a fare ancora più debiti
+Ma baby questo tu già lo sai, 
+eppure non mi disprezzi
 Quindi adesso rispondimi
 
 Cosa c'è di male se ora io vado a puntare su di noi tutto quello che ho?
@@ -509,34 +509,34 @@ Lasciali bluffare, so bene che il mio Jackpot sei tu</pre>
                         </div>
                     </section>
                     <!-- OVERVIEW AND CREDITS -->
-                    <section class="music-details section-padding-bottom" id="section_5">
-                        <div class="music-container mb-5" id="music-details">
-                            <div class="row g-3 mt-1">
+                    <section class="music-details mb-4" id="section_5">
+                        <div class="music-container p-5" id="music-details">
+                            <div class="row g-3">
                                 <!-- OVERVIEW -->
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-container-text ms-3">
-                                        <h6 class="text-uppercase mb-1">OVERVIEW</h6>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-container-text">
+                                        <h6 class="text-uppercase mb-2">OVERVIEW</h6>
                                     </div>
                                 </div>
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-container-text ms-3">
-                                        <p class="mb-0 ">
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-container-text">
+                                        <p>
                                             Con una successione di ritmi sorprendenti, ed un testo accuratamente
                                             scolpito, “Better” racconta la storia di un’infatuazione con
                                             allusioni al gioco d’azzardo.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="border-bottom py-2 mb-2 "></div>
+                                <div class="border-bottom p-0 mb-3"></div>
                                 <!-- CREDITI -->
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-container-text ms-3">
-                                        <h6 class="text-uppercase mb-1">CREDITI</h6>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-container-text">
+                                        <h6 class="text-uppercase mb-2">CREDITI</h6>
                                     </div>
                                 </div>
-                                <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-12 col-12">
-                                    <div class="album-container-text ms-3">
-                                        <p class="mb-0 "> PRODUCERS: Plot Twist</p>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 p-0 m-0">
+                                    <div class="album-container-text">
+                                        <p> PRODUCERS: Plot Twist</p>
                                     </div>
                                 </div>
                             </div>
@@ -548,68 +548,61 @@ Lasciali bluffare, so bene che il mio Jackpot sei tu</pre>
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer-section section-bg">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <!-- FOOTER SOCIALS -->
-                <div class="social-media container">
-                    <ul class="social-icon d-flex justify-content-center pt-2">
-                        <li class="social-icon-item mx-2"> <!-- INSTAGRAM -->
-                            <a class="social-icon-link bi-instagram"
-                                href="https://www.instagram.com/plot.twist.the.band/" target="_blank"></a>
-                        </li>
-                        <li class="social-icon-item mx-2"> <!-- FACEBOOK -->
-                            <a class="social-icon-link bi-facebook"
-                                href="https://www.facebook.com/people/Plot-Twist-Real/61558696212330/" target="_blank">
-                            </a>
-                        </li>
-                        <li class="social-icon-item mx-2"> <!-- TIKTOK -->
-                            <a class="social-icon-link bi-tiktok" href="https://www.tiktok.com/@plottwist.official"
-                                target="_blank"></a>
-                        </li>
-                        <li class="social-icon-item mx-2"> <!-- X -->
-                            <a class="social-icon-link bi-twitter-x" href="https://x.com/plottwisthere"
-                                target="_blank"></a>
-                        </li>
-                        <li class="social-icon-item mx-2"> <!-- SNAPCHAT -->
-                            <a class="social-icon-link bi-snapchat" href="https://t.snapchat.com/Slb272EV"
-                                target="_blank"></a>
-                        </li>
-                        <li class="social-icon-item mx-2"> <!-- YOUTUBE -->
-                            <a class="social-icon-link bi-youtube"
-                                href="https://www.youtube.com/channel/UC9KVZlAqVnjXugew4-N_rZg" target="_blank"></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- FOOTER-NAV -->
-                <ul class="nav d-flex justify-content-center mt-2">
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" href="../../help-and-support.html">Help and support</a>
-                    </li>
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" href="../../terms-and-conditions.html">Terms and conditions</a>
-                    </li>
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" href="../../privacy-policy.html">Privacy policy</a>
-                    </li>
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" href="../../cookies.html">Cookies</a>
-                    </li>
+    <footer class="footer-section">
+        <div class="row justify-content-center">
+            <ul class="social-icon">
+                <li class="social-icon-item"> <!-- INSTAGRAM -->
+                    <a class="social-icon-link bi-instagram"
+                        href="https://www.instagram.com/plot.twist.the.band/" target="_blank"></a>
+                </li>
+                <li class="social-icon-item"> <!-- FACEBOOK -->
+                    <a class="social-icon-link bi-facebook"
+                        href="https://www.facebook.com/people/Plot-Twist-Real/61558696212330/" target="_blank">
+                    </a>
+                </li>
+                <li class="social-icon-item"> <!-- TIKTOK -->
+                    <a class="social-icon-link bi-tiktok" href="https://www.tiktok.com/@plottwist.official"
+                        target="_blank"></a>
+                </li>
+                <li class="social-icon-item"> <!-- X -->
+                    <a class="social-icon-link bi-twitter-x" href="https://x.com/plottwisthere"
+                        target="_blank"></a>
+                </li>
+                <li class="social-icon-item"> <!-- SNAPCHAT -->
+                    <a class="social-icon-link bi-snapchat" href="https://t.snapchat.com/Slb272EV"
+                        target="_blank"></a>
+                </li>
+                <li class="social-icon-item"> <!-- YOUTUBE -->
+                    <a class="social-icon-link bi-youtube"
+                        href="https://www.youtube.com/channel/UC9KVZlAqVnjXugew4-N_rZg" target="_blank"></a>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../help-and-support.html">Help and support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../terms-and-conditions.html">Terms and conditions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../privacy-policy.html">Privacy policy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../cookies.html">Cookies</a>
+                </li>
 
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" href="../../credits.html">Credits</a>
-                    </li>
-                    <li class="nav-item col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-12">
-                        <a class="nav-link" id="newsletter-link" href="#">Newsletter</a>
-                    </li>
-                </ul>
-                <!-- FOOTER COPYRIGHT -->
-                <div class="d-flex justify-content-center mt-4">
-                    <p class="copyright-text d-flex mb-0">
-                        <a class= "me-1" rel="sponsored" href="https://www.tooplate.com" target="_blank">Copyright © 2025</a>
-                        Plot Twist Does It! All rights reserved.
-                    </p>
-                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../credits.html">Credits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="newsletter-link" href="#">Newsletter</a>
+                </li>
+            </ul>
+            <div class="copyright">
+                <p class="copyright-text">
+                    <a rel="sponsored" href="#">Copyright © 2025</a>
+                    Plot Twist Does It! All rights reserved.
+                </p>
             </div>
         </div>
     </footer>

@@ -44,6 +44,17 @@ Widths:
 */
 
 
+@media (min-width: 992px) { /*sidebar before it hides*/
+    .wrapper .music-container {
+     width: calc(100% - 350px);
+     margin-left: 300px;
+     margin-right: 50px;
+    }
+    .sidebar-text {
+     justify-content: center;
+    }
+}
+
 @media screen and (max-width: 991.98px) { 
     .navbar{
      background: black !important;
@@ -63,7 +74,6 @@ Widths:
      padding: 0 !important; margin:0 !important;
      border: none !important;
     }
-   
     .navbar .card-front, .navbar .card-back {
      background: transparent !important;
      padding: 0 !important; margin:0 !important;
@@ -75,8 +85,6 @@ Widths:
      position: absolute !important;
      top: 0; left: 0;
     }
-
-
     .footer-toggle-btn .card {
      background: black;
     } 
@@ -86,6 +94,37 @@ Widths:
      background-color: transparent !important;
      border-image: none;
     }
+    .music-page .navbar .nav-item {
+     padding: 0rem;
+    } 
+    .music-page .navbar .card {
+     width: auto; height: auto;
+    } 
+    .music-page .navbar .card-inner {
+     padding: 0rem .07rem;
+    } 
+    .sidebar {
+     background: black;
+     width: 250px; 
+     transform: translateX(-100%); /* fully offscreen */
+     transition: transform 0.2s ease-in-out;
+     z-index: 99;
+     border-right: 2px solid transparent;
+     border-image: linear-gradient(to bottom, transparent 20%, var(--secondary-color)) 1;
+     border-image-slice: 1;
+    }
+    .sidebar.active {
+     margin-left: 0px;
+     transform: translateX(0);
+    }
+    .sidebar.active .sidebar-divider {
+     visibility: visible !important;
+    }
+    .wrapper .music-container {
+     width: calc(100% - 4rem);
+     margin: 0rem 2rem;
+    }
+ 
    
     
       
@@ -99,7 +138,7 @@ Widths:
     iPad 10Gen
     iPadAir 4-5Gen
 */
-@media screen and (min-width: 768px) and (max-width: 991px) { 
+@media screen and (min-width: 768px) and (max-width: 991.98px) { 
     .navbar .nav-item {
      padding: 0rem 9rem;
     }                     
@@ -119,6 +158,26 @@ Widths:
      width: 35px; height: 35px;
      line-height: 35px;
     }
+    /*---------------------*/
+    .music-page .navbar .nav-item {
+     margin-top: 2rem;
+    } 
+    .music-page .navbar .nav-link {
+     padding: .5rem .5rem !important;
+     width: 280px;
+    }
+    .sidebar {
+     padding: 30rem 1.5rem 1.5rem 1.5rem;
+     width: 350px;
+    }
+    .sidebar-divider {
+     margin: 2rem .5rem;
+    }
+    .sidebar .nav-link {
+     font-size: 22px;
+     margin: 1rem .9rem;
+    }
+
 }
 
 /* Responsive Homepage phones and small small tablets: 
@@ -148,28 +207,42 @@ Widths:
     .footer-section .nav-link{
      font-size: 14px !important; 
     }
-
-
-    .sidebar {
-     padding: 20rem 1.5rem 1.5rem 1.5rem;
-
-    }
+    /*---------------------*/
 
     .music-page .navbar .nav-item {
-     padding: 0rem 0rem;
      margin-top: 1rem;
     } 
     .music-page .navbar .nav-link {
      padding: .2rem .5rem !important;
      width: 180px;
     }
-    .music-page .navbar .card {
-     width: auto; height: auto;
-    } 
-    .music-page .navbar .card-inner {
-     padding: 0rem .07rem;
-    } 
+    
+    .sidebar {
+     width: 250px;
+     padding: 20rem 1.5rem 1.5rem 1.5rem;
+    }
+
+   .album-container-text h6 {
+     font-size: 18px;
+    }
+    .song-btn {
+     font-size: 10px;
+     margin: .5rem 0rem .17rem;
+     line-height: 1.2;
+    }
+
+    .music-details .music-container {
+     padding: 1rem;
+    }
    
+    
+    .music-details p {
+     font-size: 16px;
+     font-weight: var(--font-weight-light);
+    }
+    .lyrics-wrapper {
+     font-size: 16px;
+    }
         
 }
 

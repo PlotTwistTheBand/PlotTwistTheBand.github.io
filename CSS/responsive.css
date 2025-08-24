@@ -63,6 +63,7 @@ Widths:
      padding: 0 !important; margin:0 !important;
      border: none !important;
     }
+   
     .navbar .card-front, .navbar .card-back {
      background: transparent !important;
      padding: 0 !important; margin:0 !important;
@@ -70,6 +71,12 @@ Widths:
     .navbar .card-front {
      position: relative !important;
     }
+     .navbar .card-back {
+     position: absolute !important;
+     top: 0; left: 0;
+    }
+
+
     .footer-toggle-btn .card {
      background: black;
     } 
@@ -140,6 +147,12 @@ Widths:
     }
     .footer-section .nav-link{
      font-size: 14px !important; 
+    }
+
+
+    .sidebar {
+     padding: 20rem 1.5rem 1.5rem 1.5rem;
+
     }
 
     .music-page .navbar .nav-item {

@@ -255,12 +255,13 @@ EVERYTHING NAVBAR HEADER
 }
 .navbar .card {
   background: transparent;
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
   align-items: center; justify-content: center; 
   width: 20px; height: 22px;
   perspective: 1000px;
   border-radius: var(--border-radius-xxsm);
-  border: transparent;
+  border: none;
   cursor: pointer;
 }
 .navbar .card-inner {
@@ -271,7 +272,7 @@ EVERYTHING NAVBAR HEADER
   transform-style: preserve-3d;
   border-radius: var(--border-radius-xxsm);
 }
-.navbar .card:hover .navbar .card-inner {transform: rotateY(180deg);}
+.navbar .card:hover .card-inner {transform: rotateY(180deg);}
 .navbar .card-front, .navbar .card-back {
   background: black !important;
   position: absolute;
@@ -284,9 +285,9 @@ EVERYTHING NAVBAR HEADER
   mix-blend-mode: multiply;
 }
 .navbar .card-front {color: #cc0538;}
-.card-back {
+.navbar .card-back {
   color: var(--white-color);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) !important;
 }
 /*------------------------------------------------------------------------------------------*/
 .navbar-toggler { 
@@ -691,7 +692,6 @@ MUSIC SECTION STRUCTURE
   position: fixed;
   float: left;
   width: 100%; 
-  
   padding: 1.5rem;
   flex-shrink: 0;
   z-index: 9;
@@ -699,8 +699,11 @@ MUSIC SECTION STRUCTURE
 .sidebar-text {
   display: flex; flex-direction: column;
   visibility: visible;
-  justify-content: center;
-  height: 100%;
+ 
+  height: 70%;
+  overflow: hidden; overflow-y: auto;
+  scrollbar-width: thin;       /* Firefox thin scrollbar */
+  scrollbar-color: gray transparent; /* Firefox scrollbar colors */
 }
 .sidebar-divider {
   border-bottom: .5px solid transparent;
@@ -711,18 +714,17 @@ MUSIC SECTION STRUCTURE
 }
 .layout-switcher-sidebar {
   display: flex;
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-
-  align-items: start;
-  gap: 15px;
-  margin: 0rem .9rem;
+  position: relative;
+  height: 30%;
+  justify-content: start; align-items: end;
+  margin: .2rem .9rem;
+  padding: 0rem;
+  gap: 1rem;
 }
 .layout-switcher-sidebar button {
   display: flex;
-  justify-content: center; align-items: center;
   width: 40px; height: 40px;
+  justify-content: center; align-items: center;
   background: transparent;
   color: var(--primary-color);
   font-size: 1.5rem;
@@ -732,17 +734,17 @@ MUSIC SECTION STRUCTURE
   transition: border-color 0.3s ease;
 }
 .layout-switcher-sidebar button.active {
-  border-color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.513) ;
   color: var(--secondary-color);
 }
 .layout-switcher-sidebar button:hover {
-  border-color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.513) ;
 }
 .sidebar .nav-link {
   color: var(--primary-color);
   font-size: var(--lyrics-font-size);
   font-family: var(--sidebar-font-family);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
   margin: .2rem .9rem;
   padding: 0;
 }

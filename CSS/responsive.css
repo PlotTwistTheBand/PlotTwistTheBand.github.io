@@ -52,6 +52,10 @@ Widths:
     }
     .sidebar-text {
      justify-content: center;
+     text-align: right;
+    }
+    .layout-switcher-sidebar {
+     justify-content: right;
     }
 }
 
@@ -120,9 +124,17 @@ Widths:
     .sidebar.active .sidebar-divider {
      visibility: visible !important;
     }
+
     .wrapper .music-container {
      width: calc(100% - 4rem);
      margin: 0rem 2rem;
+    }
+    .streaming-service {
+     font-size: 16px;
+    }
+    .music-video-carousel .music-container {
+     padding: 0 !important;
+    
     }
  
    
@@ -167,7 +179,7 @@ Widths:
      width: 280px;
     }
     .sidebar {
-     padding: 30rem 1.5rem 1.5rem 1.5rem;
+     padding: 30rem 1.5rem 1.5rem 1.5rem !important;
      width: 350px;
     }
     .sidebar-divider {
@@ -219,7 +231,7 @@ Widths:
     
     .sidebar {
      width: 250px;
-     padding: 20rem 1.5rem 1.5rem 1.5rem;
+     padding: 20rem 1.5rem 1.5rem 1.5rem !important;
     }
 
    .album-container-text h6 {
@@ -235,13 +247,19 @@ Widths:
      padding: 1rem;
     }
    
-    
+    .minfo .music-container {
+     padding: 2rem !important;
+    }
     .music-details p {
      font-size: 16px;
      font-weight: var(--font-weight-light);
     }
     .lyrics-wrapper {
      font-size: 16px;
+    }
+    .music-video-carousel .music-container {
+     padding: 0 !important;
+    
     }
         
 }

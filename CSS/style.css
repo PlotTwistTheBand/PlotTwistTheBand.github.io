@@ -474,7 +474,7 @@ SITE FOOTER
 .footer-section .nav-link{
   color: var(--drkm-text-color);
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: var(--font-weight-thin);
   width: fit-content;
 }
@@ -690,7 +690,7 @@ MUSIC SECTION STRUCTURE
   background: transparent;
   position: fixed;
   float: left;
-  width: 350; 
+  width: 300px; 
   height: 100%;
   padding: 1.5rem;
   flex-shrink: 0;
@@ -702,7 +702,8 @@ MUSIC SECTION STRUCTURE
   height: 100%;
   overflow: hidden; overflow-y: auto;
   scrollbar-width: thin;      
-  scrollbar-color: gray transparent; 
+  scrollbar-color: gray transparent;
+  text-align: center;
 }
 .sidebar-divider {
   border-bottom: .5px solid transparent;
@@ -716,6 +717,7 @@ MUSIC SECTION STRUCTURE
   position: relative;
   margin: 0rem .5rem;
   gap: 1rem;
+  justify-content: center;
 }
 .layout-switcher-sidebar button {
   display: flex;
@@ -739,7 +741,7 @@ MUSIC SECTION STRUCTURE
 .sidebar .nav-link {
   color: var(--primary-color);
   font-size: var(--lyrics-font-size);
-  font-family: var(--sidebar-font-family);
+  font-family: var(--monotype-font-family);
   font-weight: var(--font-weight-light);
   margin: .2rem .9rem;
   padding: 0;
@@ -880,25 +882,39 @@ MUSIC SECTION STRUCTURE
 }
 .music-page #album-container.list-view a {
   display: flex;
+   width: 100%;
 }
 .music-page #album-container.list-view .album-thumbnail {
   display: flex;
   flex: 0 0 auto;
+  min-width: 20%;
   max-width: 25%;
+  height: auto;
+
 }
 .music-page #album-container.list-view .album-container-text{
   display: inline-block;
+  width: 100%;
   margin-left:  3rem;
   margin-top: .5rem;
 }
 /* MUSIC DETAILS AND CREDITS SETUP--------------------------------------------------------*/
+.minfo .music-container {
+  padding: 3rem !important;
+  margin-bottom: 1.5rem !important;
+}
 .music-details .music-container {
   background-color: var(--drkm-primary-color);
   color: var(--drkm-text-color)
 }
 .music-details h5, p {
   font-weight: var(--font-weight-thin);
+  
   text-align: justify;
+}
+.music-details b {
+  font-weight: var(--font-weight-normal);
+  font-family: var(--monotype-font-family);
 }
 .music-details h6 {
   font-size: var(--lyrics-font-size);
@@ -929,6 +945,10 @@ MUSIC SECTION STRUCTURE
   object-fit: contain;        /* keep aspect ratio */
 }
 /* MUSIC  CAROUSEL --------------------------------------------------------------------------*/
+.music-video-carousel .music-container {
+padding: 0 !important;
+}
+
 .music-video-carousel .carousel-item,
 .music-video-carousel .carousel-item iframe {
  height: 100%;
@@ -946,10 +966,12 @@ MUSIC SECTION STRUCTURE
 }
 .thumb-row {/* Thumbnail navigation row */
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  margin: 1rem 0rem;
   gap: 10px;
-  flex-wrap: wrap;
+  overflow: hidden; overflow-x: auto;
+  white-space: nowrap;   /* prevent line breaks inside items */
+  scrollbar-width: thin;       /* Firefox thin scrollbar */
+  scrollbar-color: gray transparent; /* Firefox scrollbar colors */
 }
 .thumb-row img {
   width: 120px;
@@ -1370,110 +1392,6 @@ GALLERY HOME PAGE
 
 
 
-
-.home-page .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.659),  rgba(44, 6, 0, 0) 70%); /* make it float over the hero */
-  z-index: 10;
-}
-
-.home-section .home-img {
-  width: 100%;         /* full width */
-  height: 100vh;        /* fill section height */
-  object-fit: cover;   /* maintain aspect ratio and cover container */
-  object-position: 30% 20%; /* center the image */
-}
-.home-section::after {
-  background-color: rgba(44, 6, 0, 0.334);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.home-text {
-  font-family: var(--display-font-family);
-  font-weight: var(--font-weight-normal);
-  color: var(--white-color);
-  position: absolute;       /* position relative to .home-section */
-  top: 50%;                 /* vertical center */
-  left: 50%;                /* horizontal center */
-  transform: translate(-50%, -50%); /* perfect centering */
-  color: white;             /* ensure contrast */
-  text-align: center;       /* center text */
-  z-index: 2;               /* on top of image */
-  width: 90%;               /* optional: constrain width */
- 
-}
-
-
-
-.home-text a {
-  display: inline-block; /* or block if you want full width */
-  text-align: center;
-  margin: 0 auto;       /* center horizontally */
-  font-family: var(--display-font-family);
-  font-weight: var(--font-weight-normal);
-  color: var(--white-color);
-}
-.home-text a:hover {
-  color: var(--custom-btn-bg-hover-color);
-}
-
-.home-page {
-  position: relative;
-}
-
-
-@media (max-width: 768px) {
-  
-  .home-section .home-img {
-    content: url("/PlotTwistTheBand.github.io/images/IMG_8125.jpeg")
-  }
-  .home-text h1 {
-   font-size: var(--h3-font-size);
-  }
-}
-
-
-
-
-
-/*------------------------------------------------------------------------------------------*/
-.banner-section {
-  background-image: url('https://PlotTwistTheBand.github.io/images/IMG_7110.JPG'); 
-  background-size: cover;
-  background-position: 50% 20%;
-  background-repeat: no-repeat;
-  position: relative;
-  min-height: 34vh; 
-  max-height: 35vh;
-  text-align: justify;
-  overflow: hidden;
-}
-.banner-section::after {
-  background: linear-gradient(to top, rgb(0, 0, 0),  rgba(32, 4, 0, 0.598));
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.banner-section .container {
-  position: relative;
-  z-index: 9;
-}
-.under-construction {
-  height: 45vh; 
-
-}
 /*------------------------------------------------------------------------------------------*/
 
 

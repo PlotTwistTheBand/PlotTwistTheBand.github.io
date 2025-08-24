@@ -679,32 +679,6 @@ MASONRY LANDING PAGE
 /*-----------------------------------------------------------------------------------------
 MUSIC SECTION STRUCTURE
 -------------------------------------------------------------------------------------------*/
-.sidebar {
-  background: transparent;
-  position: fixed;
-  float: left;
-  width: 100%;
-  top: 0px;
-  flex-shrink: 0;
-  z-index: 9;
-}
-.sidebar .navbar-nav {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  background-color: transparent;
-}
-.sidebar .nav-link {
-  color: var(--primary-color);
-  font-size: var(--lyrics-font-size);
-  font-family: var(--sidebar-font-family);
-  font-weight: var(--font-weight-normal);
-}
-.sidebar .nav-link.active, .sidebar .nav-link:hover {
-  color: var(--white-color);
-}
 .wrapper {
   position: relative;
   margin: 0;
@@ -712,21 +686,68 @@ MUSIC SECTION STRUCTURE
   width: 100%;
   display:flex;
 }
-.music-line {
-  position:fixed;
-  border-bottom: 1px solid var(--drkm-text-color) ;
-  height: 4.5rem;
-  width: calc(100% - 350px);
-  margin-left: 350px;
-  z-index: 99;
-}
-.wrapper .sidebar-divider {
+.sidebar {
+  background: transparent;
+  position: fixed;
+  float: left;
+  width: 100%; 
   
-  border-bottom: 1px solid transparent;
+  padding: 1.5rem;
+  flex-shrink: 0;
+  z-index: 9;
+}
+.sidebar-text {
+  display: flex; flex-direction: column;
+  visibility: visible;
+  justify-content: center;
+  height: 100%;
+}
+.sidebar-divider {
+  border-bottom: .5px solid transparent;
   border-image: linear-gradient(to left, transparent, var(--secondary-color)) 1;
   border-image-slice: 1;
-  margin-bottom: 2.5rem;
+  margin: 1rem .5rem;
   visibility: hidden;
+}
+.layout-switcher-sidebar {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+
+  align-items: start;
+  gap: 15px;
+  margin: 0rem .9rem;
+}
+.layout-switcher-sidebar button {
+  display: flex;
+  justify-content: center; align-items: center;
+  width: 40px; height: 40px;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  border: 2px solid var(--transparent);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.layout-switcher-sidebar button.active {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+.layout-switcher-sidebar button:hover {
+  border-color: var(--secondary-color);
+}
+.sidebar .nav-link {
+  color: var(--primary-color);
+  font-size: var(--lyrics-font-size);
+  font-family: var(--sidebar-font-family);
+  font-weight: var(--font-weight-normal);
+  margin: .2rem .9rem;
+  padding: 0;
+}
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+  color: var(--white-color);
 }
 .wrapper .music-container {
   position: relative;
@@ -741,10 +762,7 @@ MUSIC SECTION STRUCTURE
   -o-transition: margin 200ms ease-out;
   transition: margin 200ms ease-out;
 }
-.wrapper .sidebar-text {
-  display: none;
-  visibility: visible;
-}
+
 /*------------------------------------------------------------------------------------------*/
 @media (min-width: 992px) { /*sidebar before it hides*/
   .wrapper .sidebar {
@@ -859,34 +877,7 @@ MUSIC SECTION STRUCTURE
 .album-overview h6{
  font-weight:200;
 }
-.layout-switcher-sidebar {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 2.5rem;
-  margin-left: .9rem;
-}
-.layout-switcher-sidebar button {
-  background: transparent;
-  border: 2px solid var(--transparent);
-  border-radius: var(--border-radius-small);
-  width: 40px;
-  height: 40px;
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-}
-.layout-switcher-sidebar button.active {
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
-}
-.layout-switcher-sidebar button:hover {
-  border-color: var(--secondary-color);
-}
+
 .music-page #album-container.list-view {
   display: block; 
 }

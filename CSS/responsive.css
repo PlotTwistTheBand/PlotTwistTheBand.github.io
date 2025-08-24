@@ -44,7 +44,7 @@ Widths:
 */
 
 
-@media screen and (max-width: 991px) { 
+@media screen and (max-width: 991.98px) { 
     .navbar{
      background: black !important;
     }
@@ -67,38 +67,20 @@ Widths:
      background: transparent !important;
      padding: 0 !important; margin:0 !important;
     }
-     .navbar .card-front {
+    .navbar .card-front {
      position: relative !important;
     }
     .footer-toggle-btn .card {
      background: black;
     } 
 
+    /*---------------------*/
     .music-page .navbar {
      background-color: transparent !important;
      border-image: none;
     }
- 
-    .music-page .navbar .card {
-     width: auto; height: auto;
-    }
-    .music-page .navbar .nav-item {
-     margin-top:.5rem;
-     padding: 0%;
-     display: flex;
-     justify-content: start;
-     width: fit-content;
-    }
-    .music-page .navbar .nav-link {
-     font-family: var(--sidebar-font-family);
-     justify-content: start;
-     padding: 0 !important; 
-     text-transform: none;
-     font-weight: var(--font-weight-normal);
-     border-color: transparent;
-     font-size: 16px;
-    }
-  
+   
+    
       
  
  
@@ -144,8 +126,6 @@ Widths:
     .navbar .nav-item {
      padding: 0rem 2rem;
     } 
-      
-   
     .navbar .nav-link {
      padding: 1.5rem 0rem !important;
     }
@@ -161,6 +141,27 @@ Widths:
     .footer-section .nav-link{
      font-size: 14px !important; 
     }
+
+    .music-page .navbar .nav-item {
+     padding: 0rem 0rem;
+     margin-top: 1rem;
+    } 
+    .music-page .navbar .nav-link {
+     padding: .2rem .5rem !important;
+     width: 200px;
+    }
+    .music-page .navbar .card {
+     width: auto; height: auto;
+    } 
+    .music-page .navbar .card-inner {
+     padding: 0rem .07rem;
+    } 
+    .sidebar-text {
+     
+    
+    
+    }
+        
 }
 
 

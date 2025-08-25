@@ -601,22 +601,17 @@ NEWSLETTER
   from {transform: translate(0px, 0px);}
   to {transform: translate(0px, 2%);}
 }
-
 .glow {
   text-shadow: 0 0 1000px #cc0538;
   color: transparent;
   position: absolute;
   top: 0;
 }
-
-
-
 @keyframes glitch-2 {
   1%{transform: rotateX(10deg) skewX(70deg);
   }
   2%{transform: rotateX(0deg) skewX(0deg);}
 }
-
 .newsletter-text input, .newsletter-text button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(.62rem, 1.05vw, 1rem);
@@ -631,7 +626,6 @@ NEWSLETTER
   user-select: none;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
-
 .newsletter-text button {
   background-color: rgba(255, 255, 255, 0.342);
   cursor: pointer;
@@ -889,16 +883,18 @@ MUSIC SECTION STRUCTURE
   color: var(--secondary-color);
   font-family: var(--monotype-font-family);
   font-weight: var(--font-weight-xthin);
+  text-transform: capitalize;
   font-size: 12px;
-  text-transform: uppercase;
   line-height: 1.5;
   border-radius: var(--border-radius-xsm);
   border: .5px solid var(--secondary-color);
+  padding: 0.1rem .8rem 0.17rem;
   margin: 1rem 0rem .17rem;
   transition: all 0.3s;
 }
+
 .song-btn:hover {
-  background: var(--drkm-primary-color);
+  background: var(--primary-color);
   color: var(--white-color);
 }
 /* MUSIC PAGE MAIN [LIST/GRID RESPONSIVENESS] --------------------------------------------------*/

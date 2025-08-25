@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardOpen = `
       <div class="card">
         <div class="card-inner">
-          <div class="card-front">♠︎</div>
-          <div class="card-back">♤</div>
+          <div class="card-front"><i class="bi bi-suit-spade"></i></div>
+          <div class="card-back"><i class="bi bi-suit-spade-fill"></i></div>
         </div>
       </div>`;
     const cardClosed = `
       <div class="card">
         <div class="card-inner">
-          <div class="card-front">♤</div>
-          <div class="card-back">♠︎</div>
+          <div class="card-front"><i class="bi bi-suit-spade"></i></div>
+          <div class="card-back"><i class="bi bi-suit-spade-fill"></i></div>
         </div>
       </div>`;
 

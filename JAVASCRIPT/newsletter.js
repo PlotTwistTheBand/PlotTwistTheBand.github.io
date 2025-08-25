@@ -19,17 +19,33 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === modal) modal.style.display = "none";
       });
 
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvEQV7YcvMxhQ-ZN2qClylweyHrnBjTnRY88-4caYuawuemBJ7MBBlG2Ep0a21A9ibBw/exec";
+      
       form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Grazie per esserti iscritto!");
-        form.reset();
-        modal.style.display = "none";
+      e.preventDefault();
+      const email = form.email.value; // grab the input by name
+
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          body: new URLSearchParams({ email }) // send as URL-encoded
+        })
+        .then(res => res.json())
+        .then(data => {
+          alert("Grazie! Ti sei iscritto alla newsletter.");
+          form.reset();
+          modal.style.display = "none";
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Ops! Qualcosa è andato storto.");
+        });
       });
 
     } catch (err) {
       console.error("Errore nel caricamento della newsletter modal:", err);
     }
   }
+
 
   openBtns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {

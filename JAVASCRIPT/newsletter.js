@@ -24,17 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
       form.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = form.email.value; // grab the input by name
+        alert("Grazie! Ti sei iscritto alla newsletter.");
+          form.reset();
+          modal.style.display = "none";
 
         fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           body: new URLSearchParams({ email }) // send as URL-encoded
         })
         .then(res => res.json())
-        .then(data => {
-          alert("Grazie! Ti sei iscritto alla newsletter.");
-          form.reset();
-          modal.style.display = "none";
-        })
+        
         .catch(err => {
           console.error(err);
           alert("Ops! Qualcosa è andato storto.");

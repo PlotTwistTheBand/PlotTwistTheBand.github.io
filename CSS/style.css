@@ -358,18 +358,23 @@ SITE FOOTER
 
 }
 .footer-section .nav-link{
+  letter-spacing: .1em;
   color: var(--drkm-text-color);
-  line-height: 1.5;
-  font-size: 16px;
+  line-height: 1;
+  font-size: clamp(.8rem, 2vw, 1rem);
   font-weight: var(--font-weight-thin);
   width: fit-content;
+}
+.footer-section .nav-link:hover {
+  color: var(--drkm-link-color);
 }
 .copyright {
   padding: 0rem 1rem ;
   margin-top: .5rem;
 }
 .copyright-text {
-  font-size: 18px;
+  letter-spacing: .1em;
+  font-size: clamp(.8rem, 2vw, 1rem);
   line-height: 1.1;
   font-weight: var(--font-weight-thin);
   text-align: center;

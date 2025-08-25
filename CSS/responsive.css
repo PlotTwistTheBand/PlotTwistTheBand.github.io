@@ -208,7 +208,7 @@ Widths:
      padding: 1.5rem 0rem !important;
     }
     .social-icon-item {
-     margin: 0rem .5rem;
+     margin: 0rem .5rem !important;
     }
     .copyright {
      padding: 0rem 3rem !important;
@@ -261,6 +261,7 @@ Widths:
      padding: 0 !important;
     
     }
+
         
 }
 

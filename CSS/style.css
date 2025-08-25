@@ -1359,8 +1359,31 @@ GALLERY HOME PAGE
   }
 }
 
+.privacy-policy,
+.crediti,
+.cookies,
+.terminiecondizioni {
+ 
+  display: flex;
+  padding: 10rem 2rem 0rem;
+  width: 100%;
 
-
+  
+}
+.privacy-policy .container-fluid,
+.crediti .container-fluid,
+.cookies .container-fluid,
+.terminiecondizioni .container-fluid
+{
+  border-radius: var(--border-radius-small);
+  border: 1px solid rgba(83, 81, 81, 0.473);
+  background-color: var(--drkm-color);
+  max-width: 1000px;
+  height: 35rem;
+  overflow: hidden; overflow-y: auto;
+  scrollbar-width: thin;       /* Firefox thin scrollbar */
+  scrollbar-color: gray ; /* Firefox scrollbar colors */
+}
 
 
 

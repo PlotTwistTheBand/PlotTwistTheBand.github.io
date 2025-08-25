@@ -23,7 +23,7 @@
   --drkm-text-color:              #e3e3e3;
   --drkm-link-color:              rgba(255, 200, 160, 0.75);
 
-  --red-i-liked: rgba(255, 4, 4, 0.305);
+  --red-i-liked: rgb(255, 4, 4);
   
   --primary-color:                #cc0538;
   --secondary-color:              #a2a2a2fe;
@@ -192,6 +192,17 @@ EVERYTHING NAVBAR HEADER
   font-family: var(--navbar-font-family);
   font-weight: var(--font-weight-xbold);
   text-transform: capitalize;
+}
+.nav-link.active {
+  color: var(--white-color);
+}
+.navbar-nav .nav-link:hover {
+  color: var(--white-color);
+}
+.navbar .dropdown-item {
+  color: var(--p-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-medium);
 }
 /*------------------------------------------------------------------------------------------*/
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -1167,22 +1178,27 @@ GALLERY HOME PAGE
 .gallery-section {
   position: relative;
   z-index: 2; /* make sure it's above gallery if you want */
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 6.25rem 2rem !important;
 }
-@media screen and (max-width: 575.98px) {
-  .gboxes {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
+.gallery-section .container-fluid {
+  max-width: 1300px;
 }
+
+
 @media screen and (max-width: 991px) {
   .gallery-section {
     padding-top: 150px;
   }
 }
 
-.gboxes { margin: 0; }
+.gboxes { 
+  margin: 0; 
+  padding: 0 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
 .gbox1, .gbox2, .gbox3, .gbox4, .gbox5, .gbox6, .gbox7 {
   margin: 4px;
   border-radius: var(--border-radius-small);
@@ -1269,7 +1285,7 @@ GALLERY HOME PAGE
   left: 0;
   width: 100%;
   height: 100%;
-  background: #a40029;
+  background: white;
   overflow: hidden;
   z-index: 2;
   opacity: 0;
@@ -1283,12 +1299,12 @@ GALLERY HOME PAGE
 
 }
 .gboxside2:hover .img-wrapper {
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
 
   justify-content: center;
   align-items: center;
@@ -1305,21 +1321,22 @@ GALLERY HOME PAGE
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(20, 20, 20, 0.356);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
   pointer-events: none;
   border-radius: var(--border-radius-xsm);
 }
 .gboxside2 .inner-link {
   position: absolute;
-  bottom: 0%;
-  left: 0%;
+  bottom: -8px;
+  left: 0;
   z-index: 2;
-  color: white;
-  font-size: var(--h5-font-size);
-  font-weight: var(--font-weight-medium);
+  letter-spacing: .4em;
+  color: var(--red-i-liked);
+  font-size: var(--h6-font-size);
+  font-weight: var(--font-weight-black);
   text-decoration: none;
-  padding: 0.3rem 1rem;
+  padding: 0rem 1rem;
   border-radius: 4px;
 }
 .gboxes .collapse:not(.show) {
@@ -1355,14 +1372,14 @@ GALLERY HOME PAGE
 .flip-titles .card-front, .flip-titles .card-back {
   margin: 0; padding: 0;
   background: transparent;
-  font-size: var(--l-font-size) !important;
+  font-size:clamp(2.5rem, 5vw, 8rem) !important;
   font-weight: 600; line-height: 1;
 }
 .flip-titles .card-front {
   color: white !important;
 }
 .flip-titles .card-back {
-  color: #cc0538 !important;
+  color: var(--red-i-liked) !important;
   position: absolute;
   top: 0; left: 0;
 }

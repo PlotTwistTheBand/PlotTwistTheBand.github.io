@@ -18,6 +18,69 @@
 -------------------------------------------------------------------------------------------*/
 
 
+/* Shared popup overlay */
+
+
+.cookie-popup {
+  display: flex;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95); /* dim background */
+  color: white;
+  
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  display: none; /* hidden by default */
+}
+
+.cookie-popup-content {
+  background: rgba(0,0,0,0.95);
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--border-radius-medium);
+  border: 2px solid var(--dark-color);
+  border-radius: 10px;
+  z-index:9999;
+}
+.cookie {
+  display: flex;
+  padding: 0rem 0rem;
+  width: 100%;
+
+} 
+.cookie .container-fluid {
+  border-radius: var(--border-radius-small);
+  border: 1px solid rgba(83, 81, 81, 0.473);
+  background-color: #121212be;
+  max-width: 1000px;
+  max-height: 10rem;
+  overflow: hidden; overflow-y: auto;
+  scrollbar-width: thin;       /* Firefox thin scrollbar */
+  scrollbar-color: gray ; /* Firefox scrollbar colors */
+
+}
+
+.cookie-buttons {
+  margin-top: 1rem;
+}
+
+.cookie-btn {
+  background-color: #cc0537;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.cookie-btn.reject {
+  background-color: #555;
+}
 
 
 
@@ -105,47 +168,7 @@ BLOGNAV
   display: flex;
   justify-content: end;
 }
-.searchbar{
-  justify-content: end;
-  display: flex;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-}
-.search-container .search {
-  background: rgba(65, 65, 65, 0.305); 
-  border: .25px solid var(--drkm-cont3-color);
-  border-top-left-radius: var(--border-radius-medium) ;
-  border-bottom-left-radius: var(--border-radius-medium);
-  width: 320px;
-}
-.search-container .search input[type=text] {
-  background: var(--transparent);
-  color: var(--drkm-text-color);
-  border: none;
-  width: 100%;
-  height: 32px;
-  padding: 0 15px;
- 
-}
-.search-container .search input[type=text]:focus {
-  outline: none;
-  box-shadow: none;
- 
-}
-.search-container .search button {
-  background: var(--transparent);
-  color: var(--drkm-text-color); 
-  border: none;
-  border-color: transparent;
-  border-top-right-radius: var(--border-radius-medium) ;
-  border-bottom-right-radius: var(--border-radius-medium);
-  width: 70px;
-  height: 32px;
-  padding-right: 10px;
-}
-.search-container .search button:hover {
-  background: rgba(89, 16, 16, 0.47);
-}
+
 /*--------------------------------------------------------------------------------*/
 .navigation-section {
   position: relative;
@@ -165,9 +188,32 @@ BLOGNAV
   }
 }
 .blognav-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
   background-image: url("../images/music_1.jpeg");
   height: 450px;
   padding:0;
+}
+.blognav-banner::before {
+  content:"";
+  position: absolute;
+   width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background: rgba(6, 6, 6, 0.8);
+  
+}
+.blognav-banner .bbtext {
+  color: white;
+  z-index: 997;
+
+}
+
+.blognav-banner .subtitle{
+  color: white;
 }
 .blognav-banner img {
   object-fit: cover; 
@@ -208,7 +254,6 @@ BLOGNAV
  
   box-sizing: content-box; /* important to avoid affecting width */
   
-
 }
 .blog-navbar .nav {  
   justify-content: flex-start;
@@ -228,21 +273,21 @@ BLOGNAV
 .blog-navbar .nav-item {  
   background: transparent !important;
   position: relative;
-  height: 7rem;
-  width: 7rem;
+  height: 7.5rem;
+  width: 6rem;
   margin-left: 3rem;
   margin-right: 3rem;
-  border-radius: var(--border-radius-large);
-  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-xsm);
+  border: .5px solid #cc05375d;
   flex: 0 0 auto;        /* prevent items from shrinking */
-  z-index: 9999999;
+  z-index: 99;
   top:0;
 }
 .blog-navbar .nav-link {  
-  height: 6.7rem;
-  width: 6.7rem;
+  height: 7.2rem;
+  width: 5.7rem;
   background: transparent !important;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xsm);
   padding: 0% !important;
   display: flex;
   align-items: center;
@@ -252,35 +297,34 @@ BLOGNAV
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.blog-navbar .nav-link .card {  
-  
-  width: 6.5rem !important;
-  height: 6.5rem !important;
+.blog-navbar .card {  
+  width: 5.5rem !important;
+  height: 7rem !important;
   margin: 0 !important;
   padding: 0 !important;
-  border-radius: 50% !important;   /* <-- make it a perfect circle */
+  border-radius: var(--border-radius-xsm);   /* <-- make it a perfect circle */
   overflow: hidden;                /* ensures inner content doesn't overflow corners */
-  display: flex;                   /* optional, for centering */
-  align-items: center;
-  justify-content: center;
   border: none !important;
 }
 .blog-navbar .card-inner {
-  border-radius: var(--border-radius-large) !important;
+   width: 100% !important;
+   height: 100% !important;
+  border-radius: var(--border-radius-xsm) !important;
 }
 .blog-navbar .card-front, .blog-navbar .card-back {
-  background: white !important;
+   background: var(--dark-color) !important;
+   color: white !important;
+  position: absolute;
   padding-top: 0px;
-  border-radius: var(--border-radius-large) !important;
-    font-family: var(--monotype-font-family);
+  border-radius: var(--border-radius-xsm) !important;
+  font-family: var(--monotype-font-family);
   font-weight: var(--font-weight-xbold);
   font-size: 14px;
 }
-.blog-navbar .card-front {color: white !important; background: rgb(11, 11, 11) !important;}
-.blog-navbar .card-back {
-  background: white !important;
-  color: black !important;
+.blog-navbar .card-front {
+  font-size: 30px !important;
 }
+
 /*--------------------------------------------------------------------------------*/
 .news-section {
   position: relative;
@@ -289,7 +333,7 @@ BLOGNAV
   padding-right: 5rem;
 }
 .red {
-  background: red !important;
+  color: var(--primary-color) !important;
 }
 .pink {
   background: pink !important;

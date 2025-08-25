@@ -1,57 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Reference existing modal elements
+  const modal = document.getElementById("newsletter");
+  const closeBtn = document.getElementById("close-modal");
+  const form = document.getElementById("newsletter-form");
   const openBtns = document.querySelectorAll(".newsletter-link");
 
-  async function loadNewsletterModal() {
-    if (document.getElementById("newsletter")) return;
-
-    try {
-      const response = await fetch("newsletter.html"); // check path!
-      const html = await response.text();
-      document.body.insertAdjacentHTML("beforeend", html);
-
-      const modal = document.getElementById("newsletter");
-      const closeBtn = document.getElementById("close-modal");
-      const form = document.getElementById("newsletter-form");
-
-      closeBtn.addEventListener("click", () => (modal.style.display = "none"));
-
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
-      });
-
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvEQV7YcvMxhQ-ZN2qClylweyHrnBjTnRY88-4caYuawuemBJ7MBBlG2Ep0a21A9ibBw/exec";
-      
-      form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = form.email.value; // grab the input by name
-        alert("Grazie! Ti sei iscritto alla newsletter.");
-          form.reset();
-          modal.style.display = "none";
-
-        fetch(GOOGLE_SCRIPT_URL, {
-          method: "POST",
-          body: new URLSearchParams({ email }) // send as URL-encoded
-        })
-        .then(res => res.json())
-        
-        .catch(err => {
-          console.error(err);
-          alert("Ops! Qualcosa è andato storto.");
-        });
-      });
-
-    } catch (err) {
-      console.error("Errore nel caricamento della newsletter modal:", err);
-    }
-  }
-
-
+  // Modal open logic
   openBtns.forEach((btn) => {
-    btn.addEventListener("click", async (e) => {
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
-      await loadNewsletterModal();
-      const modal = document.getElementById("newsletter");
-      modal.style.display = "block";
+      if (modal) {
+        modal.style.display = "block";
+      }
     });
   });
+
+  // Modal close logic
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      const content = modal.querySelector(".modal-content");
+      if (content && !content.contains(e.target)) {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  // Keep the GOOGLE_SCRIPT_URL and submission logic
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvEQV7YcvMxhQ-ZN2qClylweyHrnBjTnRY88-4caYuawuemBJ7MBBlG2Ep0a21A9ibBw/exec";
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = form.email.value;
+      alert("Grazie! Ti sei iscritto alla newsletter.");
+      form.reset();
+      if (modal) {
+        modal.style.display = "none";
+      }
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: new URLSearchParams({ email })
+      })
+      .then(res => res.json())
+      .catch(err => {
+        console.error(err);
+        alert("Ops! Qualcosa è andato storto.");
+      });
+    });
+  }
 });

@@ -169,7 +169,7 @@ EVERYTHING NAVBAR HEADER
   border-image-slice: 1;
 }
 .home-page .navbar { 
-  background: linear-gradient(to bottom,rgba(0, 0, 0, 0.829) 30%,  rgba(0, 0, 0, 0.641) 50%,  rgba(0, 0, 0, 0)) ;
+  background: transparent;
  border-bottom: 0px solid transparent;
   border-image:none;
   border-image-slice: none;
@@ -209,7 +209,7 @@ EVERYTHING NAVBAR HEADER
   margin: 5px; 
   padding: 0px 10px 0px 10px; 
 }
-.navbar .card {width: 20px; height: 22px;}
+.navbar .card {width: 20px; height: 22px; margin: -1px;}
 .navbar .card-inner {width: 100%; height: 100%;}
 .navbar .card-front, .navbar .card-back {
   background: black !important;
@@ -431,8 +431,8 @@ NEWSLETTER
   left: 0; top: 0;
   width: 100%; height: 100vh;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 10000;
 }
 .modal-content {
   background-color: var(--black-color);
@@ -450,6 +450,7 @@ NEWSLETTER
   padding: 1rem 2rem 2rem;
   border-radius: var(--border-radius-medium);
   border: 2px solid var(--dark-color);
+  z-index: 10000;
 }
 
 .subtitle-row {
@@ -584,8 +585,15 @@ NEWSLETTER
 }
 
 .scanlines {
-  overflow: hidden;
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   mix-blend-mode: difference;
+  pointer-events: none;
+   pointer-events: none;
+   z-index: 1;
 }
 
 .scanlines::before {
@@ -1168,6 +1176,9 @@ padding: 0 !important;
 }
 
 
+
+
+
 /*-----------------------------------------------------------------------------------------
 GALLERY HOME PAGE
 -------------------------------------------------------------------------------------------*/
@@ -1179,14 +1190,11 @@ GALLERY HOME PAGE
 .gallery-section .container-fluid {
   max-width: 1300px;
 }
-
-
 @media screen and (max-width: 991px) {
   .gallery-section {
     padding-top: 150px;
   }
 }
-
 .gboxes { 
   margin: 0; 
   padding: 0 0;
@@ -1412,18 +1420,13 @@ GALLERY HOME PAGE
 
 .privacy-policy,
 .crediti,
-.cookies,
 .terminiecondizioni {
- 
   display: flex;
   padding: 10rem 2rem 0rem;
   width: 100%;
-
-  
 }
 .privacy-policy .container-fluid,
 .crediti .container-fluid,
-.cookies .container-fluid,
 .terminiecondizioni .container-fluid
 {
   border-radius: var(--border-radius-small);

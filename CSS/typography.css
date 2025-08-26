@@ -25,7 +25,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10rem 2rem 5rem;
-  width: 100%;
+  width: 100vh;
   justify-content: center;
   align-items: center;
   gap: 0;

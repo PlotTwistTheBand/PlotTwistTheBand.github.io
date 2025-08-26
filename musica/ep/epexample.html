@@ -779,9 +779,8 @@ Strumming on the old banjo!
                     <a class="nav-link" href="../../privacy-policy.html">Privacy policy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../cookies.html">Cookies</a>
+                    <a class="nav-link" href="#" onclick="openCookieSettings(); return false;">Cookie <i class="bi bi-cookie"></i></a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="../../credits.html">Credits</a>
                 </li>
@@ -799,16 +798,96 @@ Strumming on the old banjo!
     </footer>
 
 
+    <div id="cookie-popup" class="cookie-popup">
+        <div class="cookie-popup-content">
+            <p>Questo sito utilizza cookie per migliorare l'esperienza dell'utente. Continuando la navigazione accetti l'uso
+                dei cookie.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-btn">Accetta</button>
+                <button id="reject-cookies" class="cookie-btn reject">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+    <div id="cookie-settings-popup" class="cookie-popup" style="display: none;">
+        <div class="scanlines"></div>
+        <div class="cookie-popup-content">
+            <section class="cookie">
+                <div class="container-fluid policy-text">
+                    <h2 class="mb-4 mt-1"> Rispettiamo la tua privacy <i class="bi bi-cookie"></i></h2>
+                    <p class="mb-4">Ultimo aggiornamento: 26/08/2025 </p>
+                    <p class="mb-4">
+                        Il sito plottwisttheband.github.io utilizza cookie per migliorare l’esperienza degli utenti.
+                    </p>
+
+                    <h3 class="mt-5 mb-5">1. Cosa sono i cookie</h3>
+                    <p class="mb-4">
+                        I cookie sono piccoli file di testo salvati sul dispositivo dell’utente per memorizzare informazioni di navigazione o preferenze.
+                    </p>
+                
+
+                    <h3 class="mt-5 mb-5">2. Tipologie di cookie utilizzati</h3>
+                    <ul class="mb-4">
+                        <li class="mb-1"><b>Cookie tecnici:</b>necessari al funzionamento del sito, es. login, visualizzazione contenuti.</li>
+                        <li class="mb-1"><b>Cookie analitici:</b>raccolgono dati anonimi sul traffico del sito (es. Google Analytics).</li>
+                        <li class="mb-1"><b>Cookie di profilazione:</b>solo previo consenso, per personalizzare contenuti e pubblicità.</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-5">3. Consenso</h3>
+                    <ul class="mb-4">
+                        <li class="mb-1">Navigando sul sito, l’utente acconsente all’uso dei cookie tecnici e analitici.</li>
+                        <li class="mb-1">I cookie di profilazione richiedono un consenso esplicito, gestibile tramite il banner cookie.</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-5">4. Gestione e rimozione dei cookie</h3>
+                    <ul class="mb-4">
+                        <li class="mb-1">L’utente può modificare le preferenze sui cookie in qualsiasi momento tramite le impostazioni del browser.</li>
+                        <li class="mb-1">Maggiori informazioni sono disponibili su [Link alla Cookie Policy completa].</li>
+                    </ul>
+
+                </div>
+            </section>
+            <div class="cookie-buttons">
+            <button id="accept-cookies-settings" class="cookie-btn">Accetta</button>
+            <button id="reject-cookies-settings" class="cookie-btn reject">Rifiuta</button>
+            </div>
+            <p>Stato attuale: <span id="cookie-status">Non impostato</span></p>
+        </div>
+    </div>
+
+    <div id="newsletter" class="modal">
+        <div class="scanlines"></div>
+        <div class="modal-content">
+            <div class="subtitle-row">
+                <p class="subtitle">Iscriviti alla nostra Newsletter</p>
+                <span id="close-modal" class="close"><i class="bi bi-x"></i></span>
+            </div>
+            <div class="glitch" data-text="JOIN THE MATRIX">JOIN THE MATRIX</div>
+            <div class="glow">JOIN THE MATRIX</div>
+            <div class="newsletter-text">
+                <form id="newsletter-form">
+                    <input type="email" name="email" placeholder="Inserisci la tua email" required>
+                    <button type="submit">Iscriviti</button>
+                </form>
+            </div>
+    
+        </div>
+    </div>
+
+
+
     <!-- JAVASCRIPT FILES -->
-    <!--1-->    <script src="../../JAVASCRIPT/jquery.min.js"></script>
-    <!--2-->    <script src="../../JAVASCRIPT/bootstrap.min.js"></script>
-    <!--3-->    <script src="../../JAVASCRIPT/jquery.sticky.js"></script>
-    <!--4-->    <script src="../../JAVASCRIPT/sidebar-toggler.js"></script>
-    <!--5-->    <script src="../../JAVASCRIPT/filter.js"></script>
+    <!--1-->    <script src="../../JAVASCRIPT/bootstrap.min.js"></script>
+    <!--2-->    <script src="../../JAVASCRIPT/gallery-home-scroll.js"></script>
+    <!--3-->    <script src="../../JAVASCRIPT/footer-toggle.js"></script>
+    <!--4-->    <script src="../../JAVASCRIPT/newsletter.js"></script>
+    <!--5-->    <script src="../../JAVASCRIPT/cookiepopup.js"></script>
     <!--6-->    <script src="../../JAVASCRIPT/gridlayout.js"></script>
-    <!--7-->    <script src="../../JAVASCRIPT/click-scroll.js"></script>
-    <!--8-->    <script src="../../JAVASCRIPT/lyrics-filter.js"></script>
-    <!--9-->    <script src="../../JAVASCRIPT/newsletter.js"></script>
+    <!--7-->    <script src="../../JAVASCRIPT/filter.js"></script>
+    <!--8-->    <script src="../../JAVASCRIPT/sidebar-toggler.js"></script>
+    <!--9-->    <script src="../../JAVASCRIPT/click-scroll.js"></script>
+    <!--10-->   <script src="../../JAVASCRIPT/lyrics-filter.js"></script>
+    <!--11-->   <script src="../../JAVASCRIPT/yt-carousel.js"></script>
+    <!--12-->   <script src="../../JAVASCRIPT/share-button.js"></script>
 
 
 </body>

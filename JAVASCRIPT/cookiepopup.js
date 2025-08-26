@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   acceptBtn.addEventListener('click', function() {
     localStorage.setItem('cookieConsent', 'accepted');
+    // Insert gtag consent update and config for GA4 after consent
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted'
+      });
+      gtag('config', 'G-PLSVD1FMYS');
+    }
     cookiePopup.style.display = 'none';
     document.body.style.overflow = "auto"; // enable scrolling
     loadAnalytics();
@@ -60,6 +68,14 @@ function openCookieSettings() {
   // Buttons
   document.getElementById('accept-cookies-settings').onclick = () => {
     localStorage.setItem('cookieConsent', 'accepted');
+    // Insert gtag consent update and config for GA4 after consent
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted'
+      });
+      gtag('config', 'G-PLSVD1FMYS');
+    }
     statusEl.textContent = "Accettato";
     popup.style.display = 'none';
     document.body.style.overflow = 'auto';

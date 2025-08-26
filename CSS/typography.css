@@ -166,8 +166,9 @@
 
 @media (max-width: 991.98px) {
   .policy-title {
+    flex: 1 1 auto; 
     max-width: none;
-    width: fit-content !important;   
+    min-width: 250px;
     height: auto; /* fit-content behavior when stacked */
     border-top-left-radius: var(--border-radius-xsm);
     border-top-right-radius: var(--border-radius-xsm);
@@ -176,8 +177,8 @@
   }
   .policy-text {
   flex: 1 1 auto; 
-  max-width: none;
-  width: fit-content !important;        /* optional minimum to avoid collapse */
+  max-width: none;        /* optional minimum to avoid collapse */
+  min-width: 250px;
   height: 30rem;
 }
 }

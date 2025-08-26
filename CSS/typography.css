@@ -17,6 +17,169 @@
   BUTTONS AND BUTTON LIKE ITEMS
 -------------------------------------------------------------------------------------------*/
 
+.terminiecondizioni,
+.privacy-policy,
+.cookie-policy,
+.crediti {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10rem 2rem 0rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.privacy-policy .container-fluid,
+.cookie-policy .container-fluid,
+.crediti .container-fluid,
+.terminiecondizioni .container-fluid {
+  overflow: hidden;
+  border-radius: var(--border-radius-xsm);
+  border: 1px solid rgba(29, 29, 29, 0.323);
+  background-color: var(--drkm-color);
+  max-width: 1300px;
+  height: 35rem;
+}
+
+
+.policy-title  {
+  display: flex;
+  position: inline-flex;
+  align-items: top;
+  flex: 1 1 500px;
+  max-width: 500px;
+  min-width: 250px;
+  height: 34.9rem;
+  margin:0;
+  padding: 1rem;
+  background:black;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: keep-all;
+  font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+  font-family: var(--monotype-font-family) ;
+  border-top-left-radius: var(--border-radius-xsm);
+  border-bottom-left-radius: var(--border-radius-xsm);
+  border: 1px solid rgb(218, 0, 0);
+}
+
+.policy-title h1 {
+  line-height: 1.5;
+  white-space: normal;           /* allow wrapping */
+  word-break: keep-all;          /* don't break in the middle of words */
+  overflow-wrap: break-word;     /* break only when needed */
+  font-size: inherit;            /* inherit scaling from parent */
+}
+
+.policy-text {
+  flex: 1 1 auto; 
+  min-width: 250px;         /* optional minimum to avoid collapse */
+  max-width: calc(100% - 500px);
+  overflow-y: auto;
+  scrollbar-width: thin;       /* Firefox thin scrollbar */
+  scrollbar-color: gray ; /* Firefox scrollbar colors */
+  max-height: 35rem;
+  padding: 2rem 3rem;
+  color: var(--drkm-text-color);
+}
+
+.policy-text h1{
+  font-family: var(--sidebar-font-family);
+  
+  font-size: 28px;
+  letter-spacing: .5em;
+  font-weight: var(--font-weight-bold);
+}
+.policy-text h2{
+  font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-light);
+  font-size: 16px;
+  letter-spacing: .05em;
+}
+.policy-text ol {
+  margin: 2rem 0rem;
+}
+
+.policy-text a {
+  color: var(--drkm-link-color); 
+  font-weight: var(--font-weight-light);
+  font-size: 14px;
+  line-height: 2.5;
+  letter-spacing: .1em;
+}
+.privacy-policy .policy-text a {
+  line-height: 1 !important;
+}
+.policy-text p {
+  font-size: 14px;
+  font-weight: var(--font-weight-thin);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.policy-text h3{
+  font-size: 16px;
+  font-weight: var(--font-weight-normal);
+  color: var(--drkm-link-color);
+  letter-spacing: .1em;
+  margin: 3rem 0rem 1rem;
+}
+
+.policy-text h4{
+  font-size: 14px;
+  font-weight: var(--font-weight-light);
+}
+
+.policy-text ul li, ol li{
+  font-size: 14px;
+  font-weight: var(--font-weight-thin);
+  color: var(--drkm-text-color);
+  line-height: 1.5;
+  margin: 0rem 0rem 1rem;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse; 
+  font-size: 14px;
+  font-weight: var(--font-weight-thin);
+  line-height: 1.5;
+  margin: 2rem 0rem 1rem;
+}
+.policy-table td, .policy-table th {
+  border: .5px solid white;   /* or any color you like */
+  padding: 1rem;
+}
+
+
+
+.policy-text b{
+  font-weight: var(--font-weight-normal);
+  font-size: 16px;
+  color: var(--drkm-link-color);
+  letter-spacing: .1em;
+}
+
+
+
+@media (max-width: 991.98px) {
+  .policy-title {
+    max-width: none;
+    height: auto; /* fit-content behavior when stacked */
+    border-top-left-radius: var(--border-radius-xsm);
+    border-top-right-radius: var(--border-radius-xsm);
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  .policy-text {
+  flex: 1 1 auto; 
+  max-width: none;        /* optional minimum to avoid collapse */
+  height: 30rem;
+}
+}
+
+
 
 /* Shared popup overlay */
 

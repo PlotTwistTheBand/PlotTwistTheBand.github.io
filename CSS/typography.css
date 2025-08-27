@@ -88,7 +88,7 @@
 .policy-text h1{
   font-family: var(--sidebar-font-family);
   
-  font-size: 28px;
+  font-size: clamp(.5rem, 1vw + 1rem, 2rem);
   letter-spacing: .5em;
   font-weight: var(--font-weight-bold);
 }

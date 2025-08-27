@@ -25,7 +25,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10rem 2rem 5rem;
-  width: 100vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 0;
@@ -183,24 +183,7 @@
 }
 }
 
-@media screen and (max-width: 767.98px) { 
-  .policy-title {
-    flex: 1 1 auto; 
-    max-width: calc(100vh - 2rem); 
-    min-width: 250px;
-    height: auto; /* fit-content behavior when stacked */
-    border-top-left-radius: var(--border-radius-xsm);
-    border-top-right-radius: var(--border-radius-xsm);
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-  }
-  .policy-text {
-  flex: 1 1 auto; 
-  max-width: calc(100vh - 2rem);       /* optional minimum to avoid collapse */
-  min-width: 250px;
-  height: 30rem;
-}
-}
+
 
 
 

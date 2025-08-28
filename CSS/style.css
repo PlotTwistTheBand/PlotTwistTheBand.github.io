@@ -78,7 +78,7 @@ body {
   background-color: var(--black-color);
   font-family: var(--body-font-family);
   display: flex; flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vw;
   margin: 0; padding: 0;
 }
 
@@ -407,7 +407,7 @@ NEWSLETTER
   left: 0; top: 0;
   width: 100%; height: 100vh;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.364);
+  background-color: rgba(0, 0, 0, 0.525);
   z-index: 10000;
 }
 .modal-content {

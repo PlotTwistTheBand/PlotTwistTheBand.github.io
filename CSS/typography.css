@@ -17,77 +17,65 @@
   BUTTONS AND BUTTON LIKE ITEMS
 -------------------------------------------------------------------------------------------*/
 
-.terminiecondizioni,
-.privacy-policy,
-.cookie-policy,
-.crediti {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.terminiecondizioni, .privacy-policy,
+.cookie-policy, .crediti {
   padding: 10rem 2rem 5rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   gap: 0;
 }
-.privacy-policy .container-fluid,
-.cookie-policy .container-fluid,
-.crediti .container-fluid,
-.terminiecondizioni .container-fluid {
+
+.terminiecondizioni .container-fluid, .privacy-policy .container-fluid, 
+.cookie-policy .container-fluid, .crediti .container-fluid {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   overflow: hidden;
   border-radius: var(--border-radius-xsm);
   border: 1px solid rgba(29, 29, 29, 0.323);
   background-color: var(--drkm-color);
   max-width: 1300px;
-  min-width: 250px;
-  height: 35rem;
+  height: 60vh;
 }
-
 
 .policy-title  {
   display: flex;
-  position: inline-flex;
+  flex: 0 0 auto; 
   align-items: top;
-  flex: 1 1 500px;
-  max-width: 500px;
-  min-width: 250px;
-  height: 34.9rem;
-  margin:0;
+  width: fit-content;
+  height: 100%;
+  margin: 0;
   padding: 1rem;
-  background:black;
-  overflow-wrap: break-word;
-  white-space: normal;
-  word-break: keep-all;
-  font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
-  font-family: var(--monotype-font-family) ;
-  border-top-left-radius: var(--border-radius-xsm);
-  border-bottom-left-radius: var(--border-radius-xsm);
-  border: 1px solid rgb(218, 0, 0);
+  background:rgba(218, 0, 0, 0.433);
+  writing-mode: vertical-lr; /* vertical top-to-bottom, right-to-left */
+  text-orientation: upright;
+  overflow: hidden;
 }
 
 .policy-title h1 {
+  font-family: var(--monotype-font-family);
+  font-size: clamp(1.2rem, .5rem + 2vw, 1.5rem); 
   line-height: 1.5;
-  white-space: normal;           /* allow wrapping */
-  word-break: keep-all;          /* don't break in the middle of words */
-  overflow-wrap: break-word;     /* break only when needed */
-  font-size: inherit;            /* inherit scaling from parent */
+  white-space: normal;     
+  word-break: keep-all;       
+  overflow-wrap: break-word;     
 }
 
 .policy-text {
-  flex: 1 1 auto; 
-  min-width: 250px;         /* optional minimum to avoid collapse */
-  max-width: calc(100% - 500px);
+  flex: 1 1 auto;           
+  max-width: 100%;      
+  box-sizing: border-box;
   overflow-y: auto;
-  scrollbar-width: thin;       /* Firefox thin scrollbar */
-  scrollbar-color: gray ; /* Firefox scrollbar colors */
-  max-height: 35rem;
-  padding: 2rem 3rem;
+  scrollbar-width: thin;    
+  scrollbar-color: gray; 
+  max-height: 60vh;
+  padding: 2rem;
   color: var(--drkm-text-color);
 }
 
 .policy-text h1{
   font-family: var(--sidebar-font-family);
-  
   font-size: clamp(.5rem, 1vw + 1rem, 2rem);
   letter-spacing: .5em;
   font-weight: var(--font-weight-bold);
@@ -102,41 +90,34 @@
   margin: 2rem 0rem;
 }
 
+.policy-text a, p, ul li, ol li,{
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .policy-text a {
   color: var(--drkm-link-color); 
   font-weight: var(--font-weight-light);
-  font-size: 14px;
-  line-height: 2.5;
   letter-spacing: .1em;
 }
-.privacy-policy .policy-text a {
-  line-height: 1 !important;
-}
+
 .policy-text p {
-  font-size: 14px;
   font-weight: var(--font-weight-thin);
-  line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .policy-text h3{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: var(--font-weight-normal);
   color: var(--drkm-link-color);
   letter-spacing: .1em;
   margin: 3rem 0rem 1rem;
 }
 
-.policy-text h4{
-  font-size: 14px;
-  font-weight: var(--font-weight-light);
-}
 
 .policy-text ul li, ol li{
-  font-size: 14px;
   font-weight: var(--font-weight-thin);
   color: var(--drkm-text-color);
-  line-height: 1.5;
   margin: 0rem 0rem 1rem;
 }
 
@@ -164,26 +145,6 @@
 
 
 
-@media (max-width: 991.98px) {
-  .policy-title {
-    flex: 1 1 auto; 
-    max-width: calc(100vh - 2rem); 
-    min-width: 250px;
-    height: auto; /* fit-content behavior when stacked */
-    border-top-left-radius: var(--border-radius-xsm);
-    border-top-right-radius: var(--border-radius-xsm);
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-  }
-  .policy-text {
-  flex: 1 1 auto; 
-  max-width: calc(100vh - 2rem);        /* optional minimum to avoid collapse */
-  min-width: 250px;
-  height: 30rem;
-}
-}
-
-
 
 
 
@@ -195,7 +156,7 @@
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.95); /* dim background */
+  background: rgba(0,0,0,0.3); /* dim background */
   color: white;
   
   justify-content: center;

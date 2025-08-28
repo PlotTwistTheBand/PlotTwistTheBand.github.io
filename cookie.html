@@ -250,7 +250,7 @@
 
     <main>
         <section class="cookie-policy">
-            <div class="container-fluid row p-0">
+            <div class="container-fluid p-0">
     
             <div class="policy-title">
                 <h1>DICHIARAZIONE DEI COOKIE</h1>
@@ -460,9 +460,12 @@
                 suo funzionamento. Facendo click su "Accetta", acconsenti anche all’uso dei cookie 
                 analitici di Google Analytics. Se desideri rifiutare, puoi visitare la nostra 
                 <a href="cookies.html">Cookie Policy</a> per maggiori informazioni</p>
+            <div class="policy-text p-0 mt-3">
+                <h2>Stato attuale: <span id="cookie-status">Non impostato</span></h2>
+            </div>
             <div class="cookie-buttons">
-                <button id="accept-cookies" class="cookie-btn">Accetta</button>
-                <button id="reject-cookies" class="cookie-btn reject">Rifiuta</button>
+                <button id="accept-cookies" class="cookie-btn">Accetta tutti i <i class="bi bi-cookie"></i></button>
+                <button id="reject-cookies" class="cookie-btn reject">Accetta solo i <i class="bi bi-cookie"></i> essenziali</button>
             </div>
         </div>
     </div>
@@ -490,11 +493,13 @@
                     
                 </div>
             </section>
-            <div class="cookie-buttons">
-            <button id="accept-cookies-settings" class="cookie-btn">Accetta</button>
-            <button id="reject-cookies-settings" class="cookie-btn reject">Rifiuta</button>
+            <div class="policy-text p-0 mt-3">
+                <h2>Stato attuale: <span id="cookie-status">Non impostato</span></h2>
             </div>
-            <p>Stato attuale: <span id="cookie-status">Non impostato</span></p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-btn">Accetta tutti i <i class="bi bi-cookie"></i></button>
+                <button id="reject-cookies" class="cookie-btn reject">Accetta solo i <i class="bi bi-cookie"></i> essenziali</button>
+            </div>
         </div>
     </div>
 

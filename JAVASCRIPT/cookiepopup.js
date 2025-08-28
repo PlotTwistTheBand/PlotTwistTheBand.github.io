@@ -89,3 +89,14 @@ function openCookieSettings() {
     document.body.style.overflow = 'auto';
   };
 }
+
+const rejectLink = document.getElementById('reject-cookies');
+if(rejectLink) {
+    rejectLink.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent','rejected');
+        const cookiePopup = document.getElementById('cookie-popup');
+        if(cookiePopup) cookiePopup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        // Then let the link navigate to cookies.html
+    });
+}

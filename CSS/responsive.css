@@ -191,6 +191,15 @@ Widths:
     }
 
 }
+.simple-nav .nav-link {
+    background: transparent !important;
+    border: none !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+}
 
 /* Responsive Homepage phones and small small tablets: 
     iPhone 11 - 11ProMax

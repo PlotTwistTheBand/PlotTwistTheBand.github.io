@@ -104,9 +104,7 @@
 .policy-text p {
   font-size: 14px;
 }
-.cookie-popup-content .policy-text p, h2 {
-  
-}
+
 .policy-text h3{
   font-size: 18px;
   font-weight: var(--font-weight-normal);
@@ -177,7 +175,9 @@
   border-radius: 10px;
   z-index:9999;
 }
-
+.cookie-popup-content .policy-text p, h2 {
+  font-size: 14px;
+}
 .cookie {
   display: flex;
   padding: 0rem 0rem;
@@ -198,6 +198,7 @@
 
 .cookie-buttons {
   margin-top: 1rem;
+
 }
 
 .cookie-btn {
@@ -210,6 +211,7 @@
   border-radius: 5px;
   font-weight: bold;
   font-size: 14px;
+  margin-top: .5rem;
 }
 
 

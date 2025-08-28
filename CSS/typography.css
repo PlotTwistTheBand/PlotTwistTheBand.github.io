@@ -168,13 +168,15 @@
 .cookie-popup-content {
   background: rgba(0,0,0,0.95);
   max-width: 600px;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
+  margin: 1rem;
   border-radius: var(--border-radius-medium);
   border: 2px solid var(--dark-color);
   border-radius: 10px;
   z-index:9999;
 }
+
 .cookie {
   display: flex;
   padding: 0rem 0rem;
@@ -206,7 +208,9 @@
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 14px;
 }
+
 
 .cookie-btn.reject {
   background-color: #555;

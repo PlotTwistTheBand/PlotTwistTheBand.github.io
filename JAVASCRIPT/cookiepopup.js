@@ -90,13 +90,13 @@ function openCookieSettings() {
   };
 }
 
-const rejectLink = document.getElementById('reject-cookies');
-if(rejectLink) {
+const rejectLink = document.getElementById('reject-cookies-link');
+if (rejectLink) {
     rejectLink.addEventListener('click', function() {
         localStorage.setItem('cookieConsent','rejected');
         const cookiePopup = document.getElementById('cookie-popup');
-        if(cookiePopup) cookiePopup.style.display = 'none';
+        if (cookiePopup) cookiePopup.style.display = 'none';
         document.body.style.overflow = 'auto';
-        // Then let the link navigate to cookies.html
+        // navigation to cookies.html will happen automatically
     });
 }

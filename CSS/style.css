@@ -23,14 +23,8 @@
   --drkm-cont6-color:             #a49f9e;
   --drkm-text-color:              #e3e3e3;
   --drkm-link-color:              rgba(255, 200, 160, 0.75);
-
   --red-i-liked:                  rgb(255, 4, 4);
-  
   --primary-color:                #cc0538;
-  --secondary-color:              #a2a2a2fe;
-  --section-bg-color:             #000000;
-  --p-color:                      #717275;
-  --border-color:                 #7fffd4;
   --link-hover-color:             #E76F51;
   --custom-btn-bg-color:          #BC6C25;
   --custom-btn-bg-hover-color:    #DDA15E;
@@ -79,6 +73,7 @@ body {
   font-family: var(--body-font-family);
   display: flex; flex-direction: column;
   min-height: 100vh;
+  width: 100vh;
   margin: 0; padding: 0;
 }
 

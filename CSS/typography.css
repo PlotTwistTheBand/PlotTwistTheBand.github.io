@@ -102,10 +102,11 @@
 }
 
 .policy-text p {
-  font-weight: var(--font-weight-thin);
-  margin-bottom: 1rem;
+  font-size: 14px;
 }
-
+.cookie-popup-content .policy-text p, h2 {
+  
+}
 .policy-text h3{
   font-size: 18px;
   font-weight: var(--font-weight-normal);

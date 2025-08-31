@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggles = document.querySelectorAll("#footer-toggle");
   
   toggles.forEach(toggleBtn => {
-    const page = toggleBtn.closest(".home-page, .gallery-page");
+    const page = toggleBtn.closest(".home-page");
     if (!page) return;
 
     const footer = page.querySelector(".footer-section");

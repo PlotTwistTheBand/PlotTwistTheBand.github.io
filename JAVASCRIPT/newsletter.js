@@ -5,15 +5,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("newsletter-form");
   const openBtns = document.querySelectorAll(".newsletter-link");
 
-  // Modal open logic
-  openBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (modal) {
-        modal.style.display = "block";
-      }
+  // Modal open logic only on gallery page for double click/double tap
+  if (document.body.classList.contains('gallery-page')) {
+    openBtns.forEach((btn) => {
+      // Double click for desktop
+      btn.addEventListener("dblclick", (e) => {
+        e.preventDefault();
+        if (modal) {
+          modal.style.display = "block";
+        }
+      });
+
+      // Double tap detection for touch devices
+      let lastTap = 0;
+      btn.addEventListener("touchend", (e) => {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        if (tapLength < 300 && tapLength > 0) {
+          e.preventDefault();
+          if (modal) {
+            modal.style.display = "block";
+          }
+        }
+        lastTap = currentTime;
+      });
     });
-  });
+  } else {
+    // On non-gallery pages, open modal on single click normally
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (modal) {
+          modal.style.display = "block";
+        }
+      });
+    });
+  }
 
   // Modal close logic
   if (closeBtn) {

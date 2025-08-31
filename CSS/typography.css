@@ -277,13 +277,21 @@
   text-align: center !important;
   padding-top: 0;
   left:0; right:0;
+  
 }
+
+
 .top-news .carousel-caption p {
   text-align: inherit !important;
+  font-family: var(--monotype-font-family);
   line-height: 1;
+  
 }
 .top-news .carousel-caption h5 {
   text-align: inherit !important;
+  color: var(--yellow1);
+  font-family: var(--navbar-font-family);
+  letter-spacing: .3em;
   line-height: 1;
 }
 

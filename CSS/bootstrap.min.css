@@ -6997,7 +6997,7 @@ fieldset:disabled .btn {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: var(--bs-carousel-caption-color);
-    text-align: center
+    text-align: center;
 }
 
 .carousel-dark {

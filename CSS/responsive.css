@@ -136,12 +136,23 @@ Widths:
      padding: 0 !important;
     
     }
- 
-   
-    
-      
- 
- 
+    .item .carousel-caption h5{
+    font-size: 16px;
+    }
+    .item .carousel-caption p{
+        font-size: 14px;
+     line-height:1;
+    }
+     .top-news .carousel-caption {
+        padding: 0;
+    }
+    .top-news .carousel-caption p{
+        font-size: 12px;
+    }
+     .top-news .carousel-caption h5{
+        font-size: 14px;
+    }
+
 }
 /* Responsive Homepage for tablets: 
     iPad 10Gen

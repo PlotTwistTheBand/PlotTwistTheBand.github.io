@@ -191,6 +191,7 @@ EVERYTHING CARDS
   font-family: var(--navbar-font-family);
   font-weight: var(--font-weight-xbold);
   text-transform: capitalize;
+  
  
 }
 .navbar-nav .nav-link:hover {

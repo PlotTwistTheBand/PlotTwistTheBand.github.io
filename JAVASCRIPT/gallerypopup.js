@@ -296,36 +296,4 @@ document.querySelectorAll('.gallery-popup').forEach(gallery => {
 });
 
 
-// --- Desktop copyright positioning ---
-(function () {
-  // Only run on the gallery page (desktop)
-  if (!document.body.classList.contains('gallery-page')) return;
-
-  const footer = document.querySelector('.footer-section');
-  const copyright = document.querySelector('.copyright');
-  if (!footer || !copyright) return;
-
-  function updateCopyrightPosition() {
-    const footerHeight = footer.getBoundingClientRect().height;
-    const offset = 8; // px above footer
-    copyright.style.position = 'fixed';
-    copyright.style.left = '50%';
-    copyright.style.transform = 'translateX(-50%)';
-    copyright.style.bottom = footerHeight + offset + 'px';
-    copyright.style.width = '100%';
-    copyright.style.textAlign = 'center';
-    copyright.style.zIndex = 9999;
-  }
-
-  // Initial position
-  updateCopyrightPosition();
-
-  // Update on window resize
-  window.addEventListener('resize', updateCopyrightPosition);
-
-  // Live update if footer height changes
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(updateCopyrightPosition).observe(footer);
-  }
-})();
 

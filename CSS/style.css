@@ -121,7 +121,7 @@ a:hover {color: var(--link-hover-color);}
 /*-----------------------------------------------------------------------------------------
 EVERYTHING CARDS
 -------------------------------------------------------------------------------------------*/
-.card {
+.card { 
   background: transparent;
   position: relative;
   display: inline-flex;
@@ -150,20 +150,25 @@ EVERYTHING CARDS
 }
 .card-back { transform: rotateY(180deg);}
 
-
+ 
 /*-----------------------------------------------------------------------------------------
 EVERYTHING NAVBAR HEADER
 -------------------------------------------------------------------------------------------*/
 .navbar {
-  background: black;
-  padding: .45rem 0rem;
   position: fixed !important;
+  z-index: 9999; 
   justify-content: center;
   width: 100%;
-  z-index: 9999; 
+  padding: .45rem 0rem;
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(to right, transparent 40%, var(--secondary-color)) 1;
   border-image-slice: 1;
+  background: black;
+}
+.navbar-collapse {
+  overflow-y: auto;       /* enable vertical scrolling when needed */
+  max-height: 80vh;      /* prevent it from ever exceeding the viewport */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
 }
 .home-page .navbar { 
   background: transparent;
@@ -281,7 +286,7 @@ SITE FOOTER
   background: transparent !important;
   position: fixed !important;
   bottom: 20px; right: 20px;
-  z-index: 9999 !important;
+  z-index: 9998 !important;
   color: var(--white-color);
   border: none;
   cursor: pointer;

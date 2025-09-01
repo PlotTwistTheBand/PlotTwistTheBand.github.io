@@ -47,6 +47,7 @@
   --h5-font-size:                 24px;
   --h6-font-size:                 22px;
   --p-font-size:                  18px;
+  --navbar-font-size:             16px;
   --lyrics-font-size:             16px;
   --song-btn-font-size:           10px;
 
@@ -150,36 +151,32 @@ EVERYTHING CARDS
 }
 .card-back { transform: rotateY(180deg);}
 
- 
-/*-----------------------------------------------------------------------------------------
-EVERYTHING NAVBAR HEADER
--------------------------------------------------------------------------------------------*/
+ .nav-link.active {  /*applies only for sidebartext*/
+  color: var(--white-color);
+}
+/*-------------HEADDER NAVBAR-------------*/
 .navbar {
   position: fixed !important;
   z-index: 9999; 
   justify-content: center;
   width: 100%;
   padding: .45rem 0rem;
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(to right, transparent 40%, var(--secondary-color)) 1;
   border-image-slice: 1;
   background: black;
 }
 .navbar-collapse {
-  overflow-y: auto;       /* enable vertical scrolling when needed */
-  max-height: 80vh;      /* prevent it from ever exceeding the viewport */
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
-}
-.home-page .navbar { 
-  background: transparent;
- border-bottom: 0px solid transparent;
-  border-image:none;
-  border-image-slice: none;
+  overflow-y: auto;
+  max-height: 80vh;
+  -webkit-overflow-scrolling: touch; 
 }
 .navbar .container-fluid {
   position: relative;
   padding: 15px 30px;
   z-index: 9998;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  margin: 5px; 
+  padding: 0px 10px 0px 10px; 
 }
 .navbar-logo-image {
   width: 4rem;
@@ -190,45 +187,22 @@ EVERYTHING NAVBAR HEADER
   z-index: 9997;
 }
 .navbar .nav-link {
-  font-size: var(--lyrics-font-size);
+  font-size: var(--navbar-font-size);
   font-family: var(--navbar-font-family);
   font-weight: var(--font-weight-xbold);
   text-transform: capitalize;
-}
-.nav-link.active {
-  color: var(--white-color);
+  color: #cc0538;
+  letter-spacing: .65em;
 }
 .navbar-nav .nav-link:hover {
   color: var(--white-color);
 }
-.navbar .dropdown-item {
-  color: var(--p-color);
-  font-size: var(--menu-font-size);
-  font-weight: var(--font-weight-medium);
-}
-/*------------------------------------------------------------------------------------------*/
-.navbar-expand-lg .navbar-nav .nav-link {
-  margin: 5px; 
-  padding: 0px 10px 0px 10px; 
-}
-.navbar .card {width: 20px; height: 22px; margin: -1px;}
-.navbar .card-inner {width: 100%; height: 100%;}
-.navbar .card-front, .navbar .card-back {
-  background: black !important;
-  position: absolute;
-  padding-top: 4px;
-  mix-blend-mode: multiply;
-}
-.navbar .card-front {color: #cc0538;}
-.navbar .card-back {color: var(--white-color);}
-/*------------------------------------------------------------------------------------------*/
 .navbar-toggler { 
   border: 0;
   padding: 0;
   cursor: pointer;
   margin: 0;
-  width: 30px;
-  height: 35px;
+  width: 30px; height: 35px;
   outline: none;
 }
 .navbar-toggler:focus {
@@ -278,6 +252,41 @@ EVERYTHING NAVBAR HEADER
 .navbar-toggler .navbar-toggler-icon::after {
   top: 8px;
 }
+/*--HOMEPAGENAV--*/
+.home-page .navbar { 
+  background: transparent;
+  border-bottom: 0px solid transparent;
+  border-image:none;
+  border-image-slice: none;
+}
+.home-page .navbar .nav-link {
+  letter-spacing: 0em !important;
+}
+.navbar .card {
+  width: 20px; height: 22px; 
+  margin: -1px;
+}
+.navbar .card-inner {
+  width: 100%; height: 100%;
+}
+.navbar .card-front, .navbar .card-back {
+  background: black !important;
+  position: absolute;
+  padding-top: 4px;
+  mix-blend-mode: multiply;
+}
+.navbar .card-front {color: #cc0538;}
+.navbar .card-back {color: var(--white-color);}
+/*------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
 
 /*-----------------------------------------------------------------------------------------
 SITE FOOTER    

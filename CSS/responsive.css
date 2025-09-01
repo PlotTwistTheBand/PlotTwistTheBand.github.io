@@ -73,6 +73,7 @@ Widths:
      border-radius: var(--border-radius-small);
      border: .7px solid rgba(255, 255, 255, 0.513) ;
      background: rgba(9, 9, 9, 0.491);
+     letter-spacing: .1em !important;
     }
     .navbar .card {
      padding: 0 !important; margin:0 !important;

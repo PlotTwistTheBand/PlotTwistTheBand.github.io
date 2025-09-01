@@ -191,8 +191,7 @@ EVERYTHING CARDS
   font-family: var(--navbar-font-family);
   font-weight: var(--font-weight-xbold);
   text-transform: capitalize;
-  color: #cc0538;
-  letter-spacing: .65em;
+ 
 }
 .navbar-nav .nav-link:hover {
   color: var(--white-color);
@@ -252,6 +251,22 @@ EVERYTHING CARDS
 .navbar-toggler .navbar-toggler-icon::after {
   top: 8px;
 }
+.navbar .card {
+  width: 20px; height: 22px; 
+  margin: -1px;
+}
+.navbar .card-inner {
+  width: 100%; height: 100%;
+}
+.navbar .card-front, .navbar .card-back {
+ 
+  position: absolute;
+  padding-top: 4px;
+  mix-blend-mode: multiply;
+}
+.navbar .card-front {background: #700a24; color: var(--drkm-text-color);}
+.navbar .card-back {background:var(--drkm-text-color); color: #cc0538;}
+
 /*--HOMEPAGENAV--*/
 .home-page .navbar { 
   background: transparent;
@@ -262,21 +277,12 @@ EVERYTHING CARDS
 .home-page .navbar .nav-link {
   letter-spacing: 0em !important;
 }
-.navbar .card {
-  width: 20px; height: 22px; 
-  margin: -1px;
+.home-page .navbar .card-front, .home-page .navbar .card-back {
+  background: black;
 }
-.navbar .card-inner {
-  width: 100%; height: 100%;
-}
-.navbar .card-front, .navbar .card-back {
-  background: black !important;
-  position: absolute;
-  padding-top: 4px;
-  mix-blend-mode: multiply;
-}
-.navbar .card-front {color: #cc0538;}
-.navbar .card-back {color: var(--white-color);}
+.home-page .navbar .card-front {color: #cc0538;}
+.home-page .navbar .card-back {color: var(--white-color);}
+
 /*------------------------------------------------------------------------------------------*/
 
 

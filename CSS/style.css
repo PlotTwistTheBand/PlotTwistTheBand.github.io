@@ -300,7 +300,7 @@ SITE FOOTER
   background: transparent !important;
   position: fixed !important;
   bottom: 20px; right: 20px;
-  z-index: 9998 !important;
+  z-index: 9999 !important;
   color: var(--white-color);
   border: none;
   cursor: pointer;

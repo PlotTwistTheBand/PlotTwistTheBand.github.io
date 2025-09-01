@@ -274,9 +274,7 @@ EVERYTHING CARDS
   border-image:none;
   border-image-slice: none;
 }
-.home-page .navbar .nav-link {
-  letter-spacing: 0em !important;
-}
+
 .home-page .navbar .card-front, .home-page .navbar .card-back {
   background: black;
 }

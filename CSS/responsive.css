@@ -85,10 +85,12 @@ Widths:
     }
     .navbar .card-front {
      position: relative !important;
+     color: #cc0538;
     }
      .navbar .card-back {
      position: absolute !important;
      top: 0; left: 0;
+     color: var(--drkm-text-color);
     }
     .footer-toggle-btn .card {
      background: black;

@@ -736,88 +736,6 @@ GALLERY TEST 2
 
 
 
-
-
-
-.gallery-page .footer-section .nav {
-  padding: 0rem 0rem !important;
-  margin-top: .2rem;
-  display: flex;
-  justify-content: start;
-
-}
-
-.gallery-page .footer-section .nav-link {
-  letter-spacing: .1em;
-  color: var(--drkm-text-color);
-  line-height: 1;
-  font-size: clamp(.8rem, 2vw, 1rem);
-  font-weight: var(--font-weight-thin);
-  width: fit-content;
-}
-
-.gallery-page .footer-section .nav-link:hover {
-  color: var(--drkm-link-color);
-}
-
-.gallery-page .footer-section {
-  position: fixed !important;
-  background-color: #555;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0rem;
-  margin: 0;
-  z-index: 9998;
-  overflow-y: auto;
-  transition: opacity 0.3s ease;
-  border: 2px solid rgb(45, 45, 45);
-  border-radius: var(--border-radius-xsm);
-}
-
-
-
-
-.windows98 {
-  padding: .3rem .5rem;
-  margin: .1rem;
-  display: inline-flex;
-  justify-content: start;
-  font-family: var(--monotype-font-family);
-  font-weight: var(--font-weight-xbold);
-  border-radius: var(--border-radius-small);
-  border-top: 1px solid rgba(142, 0, 0, 0.6);
-  border-left: 1px solid rgba(142, 0, 0, 0.6);
-  border-right: 1px solid rgba(29, 0, 0, 0.7);
-  border-bottom: 1px solid rgba(29, 0, 0, 0.7);
-  background: linear-gradient(to bottom, rgba(193, 2, 2, 0.7), rgb(142, 0, 0), rgba(177, 4, 4, 0.7));
-  width: fit-content;
-  transition: all 0.3s ease-in-out;
-  font-weight: var(--font-weight-normal);
-  color: var(--drkm-text-color);
-}
-
-.windows98:hover {
-  border-top: 1px solid rgba(29, 0, 0, 0.7);
-  border-left: 1px solid rgba(29, 0, 0, 0.7);
-  border-right: 1px solid rgba(142, 0, 0, 0.6);
-  border-bottom: 1px solid rgba(142, 0, 0, 0.6);
-  background: linear-gradient(to bottom, rgba(160, 0, 0, 0.7), rgb(142, 0, 0), rgba(160, 0, 0, 0.7));
-  width: fit-content;
-
-}
-
-
-.windows98 a {
-  font-weight: inherit;
-  color: var(--drkm-text-color);
-}
-
-.windows98 a:hover {
-  color: white
-}
-
 .desktop-popup-content {
   background-color: var(--black-color);
   position: relative;
@@ -836,31 +754,65 @@ GALLERY TEST 2
   z-index: 10000;
 }
 
-.bar {
-  background: linear-gradient(to bottom, rgba(193, 2, 2, 0.7), rgb(142, 0, 0), rgba(177, 4, 4, 0.7));
-  border-radius: var(--border-radius-small);
-  width: 100%;
-  text-align: left;
-  padding: 0rem;
-  margin: 0rem;
-  line-height: 1;
-  z-index: 9999;
+
+.desktop h5 {
   overflow: hidden;
-}
-
-.bar p {
-  margin: 0;
-  padding: .5rem 1rem;
-  font-size: 16px;
-  font-weight: var(--font-weight-normal);
+  border-right: .5em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
   font-family: var(--monotype-font-family);
-
+  font-weight: var(--font-weight-thin);
+  font-size: 14px;
+  width: 0ch; /* Start hidden */
+  animation: 
+    typing 2s steps(22, end) forwards,
+    blink-caret .75s step-end 3.7;
 }
+
+@keyframes typing {
+  from { width: 0ch; }
+  to { width: 22ch; } 
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+  
+}
+
+
+
+
+.desktop h6 {
+  overflow: hidden;
+  border-right: .5em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-thin);
+  font-size: 14px;
+  width: 0ch; /* Start hidden */
+  animation: 
+    typing2 4.5s steps(40, end) forwards,
+    blink-caret2 .75s step-end infinite;
+  animation-delay: 3s;
+}
+
+@keyframes typing2 {
+  from { width: 0ch; }
+  to { width: 51ch; } 
+}
+
+@keyframes blink-caret2 {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
 
 
 .desktopbar {
   display: inline-flex;
-  justify-content: start;
+  justify-content:left;
   padding: 0rem !important;
   margin: .1rem;
   font-family: var(--monotype-font-family);
@@ -875,12 +827,15 @@ GALLERY TEST 2
   align-items: center;
 
 }
+.gallery-page .footer-section .nav {
+   justify-content: start;
+   padding: 0rem !important;
+}
 
 .desktopbar .social-icon,
 .desktopbar .social-icon-item {
   padding: 0rem !important;
   margin: 0rem !important;
-
   display: flex;
   align-items: center;
   width: fit-content;
@@ -920,6 +875,7 @@ GALLERY TEST 2
   border-radius: var(--border-radius-small);
   margin: .1rem;
   font-size: 14px;
+  
   align-content: center;
   background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgb(18, 18, 18), rgba(18, 18, 18, 0.7));
 }
@@ -1008,5 +964,7 @@ GALLERY TEST 2
     font-size: 12px !important;
     padding: .4rem .5rem;
   }
-
+    .desktop h5, .desktop h6 {
+  font-size: 10px;
+}
 }

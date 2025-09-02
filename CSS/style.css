@@ -440,11 +440,41 @@ a:hover {
   border-top: 1px solid var(--dark-color);
   z-index: 9997;
 }
+.social-icon {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0rem 1rem;
+  margin: .5rem 0rem;
+}
+.social-icon-item {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  margin: 0rem 2rem;
+}
+.social-icon-link {
+  display: block;
+  height: 35px;
+  width: 35px;
+  margin: 0;
+  border-radius: var(--border-radius-large);
+  background: transparent;
+  color: var(--drkm-text-color);
+  text-align: center;
+  line-height: 35px;
+  transition: all 0.2s ease-in-out;
+}
+.social-icon-link:hover {
+  background: rgb(255, 255, 255);
+  color: var(--primary-color);
+}
 .footer-section .nav {
-  padding: 0rem 1rem !important;
-  margin-top: .2rem;
   display: flex;
   justify-content: center;
+  padding: 0rem 1rem !important;
+  margin-top: .2rem;
 }
 .footer-section .nav-link {
   letter-spacing: .1em;
@@ -457,11 +487,22 @@ a:hover {
 .footer-section .nav-link:hover {
   color: var(--drkm-link-color);
 }
-  /*/Homepage Footer Section/*/
-
-
-
-
+.copyright {
+  padding: 0rem 1rem;
+  margin-top: .5rem;
+}
+.copyright-text {
+  letter-spacing: .1em;
+  font-size: clamp(.8rem, 2vw, 1rem);
+  line-height: 1.1;
+  font-weight: var(--font-weight-thin);
+  text-align: center;
+  cursor: default;
+}
+.copyright-text a {
+  color: var(--drkm-link-color);
+}
+/*/Homepage Footer Section/*/
 .home-page .footer-section {
   position: fixed !important;
   bottom: 0;
@@ -472,69 +513,9 @@ a:hover {
   overflow-y: auto;
   transition: opacity 0.3s ease;
 }
-
 .home-page .footer-section.active {
   display: block;
 }
-
-
-
-.footer-section .social-icon {
-  display: flex;
-  justify-content: center;
-  padding: 0rem 1rem;
-  margin: .5rem 0rem;
-}
-
-.social-icon-item {
-  list-style: none;
-  display: inline-block;
-  vertical-align: top;
-  margin: 0rem 2rem;
-}
-
-.social-icon-link {
-  background: transparent;
-  color: var(--drkm-text-color);
-  border-radius: var(--border-radius-large);
-  display: block;
-  margin: 0;
-  text-align: center;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.social-icon-link:hover {
-  background: var(--white-color);
-  color: var(--primary-color);
-}
-
-.social-icon-link span {
-  display: block;
-}
-
-
-
-.copyright {
-  padding: 0rem 1rem;
-  margin-top: .5rem;
-}
-
-.copyright-text {
-  letter-spacing: .1em;
-  font-size: clamp(.8rem, 2vw, 1rem);
-  line-height: 1.1;
-  font-weight: var(--font-weight-thin);
-  text-align: center;
-  cursor: default;
-}
-
-.copyright-text a {
-  color: var(--drkm-link-color);
-}
-
 .footer-toggle-btn {
   position: fixed;
   z-index: 9999 !important;
@@ -566,6 +547,58 @@ a:hover {
 .footer-toggle-btn .card-back {
   color: var(--white-color);
 }
+/*/Gallery Footer Section/*/
+.gallery-page .footer-section {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  padding: 0rem;
+  margin: 0;
+  border-radius: var(--border-radius-xsm);
+  border: 2px solid rgb(45, 45, 45);
+  background-color: #555;
+  transition: opacity 0.3s ease;
+}
+.windows98 {
+  padding: .3rem .5rem;
+  margin: .1rem;
+  display: inline-flex;
+  justify-content: start;
+  font-family: var(--monotype-font-family);
+  font-weight: var(--font-weight-xbold);
+  border-radius: var(--border-radius-small);
+  border-top: 1px solid rgba(142, 0, 0, 0.6);
+  border-left: 1px solid rgba(142, 0, 0, 0.6);
+  border-right: 1px solid rgba(29, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(29, 0, 0, 0.7);
+  background: linear-gradient(to bottom, rgba(193, 2, 2, 0.7), rgb(142, 0, 0), rgba(177, 4, 4, 0.7));
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  font-weight: var(--font-weight-normal);
+  color: var(--drkm-text-color);
+}
+
+.windows98:hover {
+  border-top: 1px solid rgba(29, 0, 0, 0.7);
+  border-left: 1px solid rgba(29, 0, 0, 0.7);
+  border-right: 1px solid rgba(142, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(142, 0, 0, 0.6);
+  background: linear-gradient(to bottom, rgba(160, 0, 0, 0.7), rgb(142, 0, 0), rgba(160, 0, 0, 0.7));
+  width: fit-content;
+}
+
+.windows98 a {
+  font-weight: inherit;
+  color: var(--drkm-text-color);
+}
+.windows98 a:hover {
+  color: white
+}
+
 
 /*---------------------------------------------------------------------------------------*/
 
@@ -1543,30 +1576,20 @@ p {
   padding-right: 2rem;
   width: 100%;
   overflow: hidden;
-  /* hides caret overflow */
   overflow-y: auto;
   scrollbar-width: thin;
-  /* Firefox thin scrollbar */
   scrollbar-color: gray transparent;
-  /* Firefox scrollbar colors */
 }
 
 .lyrics-wrapper pre {
   font-family: inherit;
-  /* use same font as wrapper */
   font-size: inherit;
-  /* keep wrapper’s font size */
   font-weight: inherit;
   line-height: 1.5;
-  /* improve readability */
   margin: 0;
-  /* remove default <pre> margin */
   white-space: pre-wrap;
-  /* preserve breaks but wrap long lines */
   word-break: break-word;
-  /* break words if too long */
   overflow-wrap: break-word;
-  /* ensure wrapping in all browsers */
 }
 
 .lyrics-wrapper::-webkit-scrollbar {

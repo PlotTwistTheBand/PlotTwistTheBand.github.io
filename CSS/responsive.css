@@ -60,55 +60,9 @@ Widths:
 }
 
 @media screen and (max-width: 991.98px) { 
-    .navbar{
-     background: black !important;
-    }
-    .navbar .nav-item {
-     margin-top: 3rem;
-    }  
-    .navbar .nav-link {
-     display: flex;
-     justify-content: center;
-     margin: 0 !important; 
-     border-radius: var(--border-radius-small);
-     border: .7px solid rgba(255, 255, 255, 0.513) ;
-     background: rgba(9, 9, 9, 0.491);
-     letter-spacing: .1em !important;
-    }
-    .navbar .card {
-     padding: 0 !important; margin:0 !important;
-     border: none !important;
-    }
-    .navbar .card-front, .navbar .card-back {
-     background: transparent !important;
-     padding: 0 !important; margin:0 !important;
-    }
-    .navbar .card-front {
-     position: relative !important;
-     color: #cc0538;
-    }
-     .navbar .card-back {
-     position: absolute !important;
-     top: 0; left: 0;
-     color: var(--drkm-text-color);
-    }
+    
     .footer-toggle-btn .card {
      background: black;
-    } 
-
-    /*---------------------*/
-    .music-page .navbar {
-     background-color: transparent !important;
-     border-image: none;
-    }
-    .music-page .navbar .nav-item {
-     padding: 0rem;
-    } 
-    .music-page .navbar .card {
-     width: auto; height: auto;
-    } 
-    .music-page .navbar .card-inner {
-     padding: 0rem .07rem;
     } 
     .sidebar {
      background: black;
@@ -165,13 +119,7 @@ Widths:
     iPadAir 4-5Gen
 */
 @media screen and (min-width: 768px) and (max-width: 991.98px) { 
-    .navbar .nav-item {
-     padding: 0rem 9rem;
-    }                     
-    .navbar .nav-link {
-     padding: 2.2rem 0rem !important;
-     font-size: 24px;
-    }
+    
     .footer-toggle-btn .card {
      width: 50px; height: 70px;
      font-size: 30px;
@@ -185,13 +133,7 @@ Widths:
      line-height: 35px;
     }
     /*---------------------*/
-    .music-page .navbar .nav-item {
-     margin-top: 2rem;
-    } 
-    .music-page .navbar .nav-link {
-     padding: .5rem .5rem !important;
-     width: 280px;
-    }
+    
     .sidebar {
      padding: 30rem 1.5rem 1.5rem 1.5rem !important;
      width: 350px;
@@ -224,12 +166,7 @@ Widths:
     iPhone 16 - 16Pro - 16ProMax - 16Plus  
 */
 @media screen and (max-width: 767.98px) { 
-    .navbar .nav-item {
-     padding: 0rem 2rem;
-    } 
-    .navbar .nav-link {
-     padding: 1.5rem 0rem !important;
-    }
+
     .social-icon-item {
      margin: 0rem .5rem !important;
     }
@@ -242,13 +179,7 @@ Widths:
     
     /*---------------------*/
 
-    .music-page .navbar .nav-item {
-     margin-top: 1rem;
-    } 
-    .music-page .navbar .nav-link {
-     padding: .2rem .5rem !important;
-     width: 180px;
-    }
+  
     
     .sidebar {
      width: 250px;

@@ -1,8 +1,58 @@
 /* CSS STYLESHEET FOR PLOT TWIST WEBSITE DIFFERENT SECTIONS
   NavBar, Home Section, Music Section, Custom Buttons, Footer, and Responsive Styles
 */
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Lexend+Tera:wght@100..900&family=Limelight&family=Outfit:wght@100..900&display=swap');
+/* ---------------------------
+   Google Fonts (local) 
+   Variable Fonts
+   License info included
+---------------------------- */
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('../fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700; /* variable font range */
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('../fonts/Cascadia_Code/CascadiaCode-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700; /* same weight range */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Tera';
+  src: url('../fonts/Lexend_Tera/LexendTera-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('../fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700; /* variable font range */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Limelight';
+  src: url('../fonts/Limelight/Limelight-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* variable font weight range */
+  font-style: normal;   /* you can also add italic if available */
+  font-display: swap;
+}
 /*--------------------------------------------
  CUSTOM PROPERTIES/HTML/TYPOGRAPHY          
 ---------------------------------------------*/

@@ -1364,7 +1364,6 @@ h2 {
   max-width: 1200px;
   position: relative;
 }
-
 .album-overview .music-container {
   height: auto;
   padding: 0rem !important;
@@ -1700,8 +1699,6 @@ h2 {
   letter-spacing: .05em;
   font-size: 20px;
   font-weight: var(--font-weight-xbold);
-  
- 
 }
 .lyrics-title .nav-link:active {
   color: var(--secondary-color);
@@ -1796,17 +1793,14 @@ h2 {
   }
 }
 
-
-
-/*-----------------------------------------------------------------------------------------
-  NOVITA PAGE  
--------------------------------------------------------------------------------------------*/
+/*--------------------------------------------
+ NOVITA PAGE       
+---------------------------------------------*/
 .novita-section {
   position: relative;
   padding: 7rem 2rem 2rem;
   display: block;
 }
-
 .top-news {
   margin: 0 0 3rem;
   align-self: center;

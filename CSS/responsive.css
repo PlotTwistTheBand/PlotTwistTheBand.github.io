@@ -48,7 +48,6 @@ Widths:
     .wrapper .music-container {
      width: calc(100% - 350px);
      margin-left: 300px;
-     margin-right: 50px;
     }
     .sidebar-text {
      justify-content: center;

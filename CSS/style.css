@@ -564,6 +564,40 @@ a:hover {
 .footer-toggle-btn .card-back {
   color: var(--white-color);
 }
+@media screen and (max-width: 991.98px) {
+  .footer-toggle-btn .card {
+    background: black;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .footer-toggle-btn .card {
+    width: 50px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .social-icon-item {
+    margin: 0rem 1rem;
+  }
+
+  .social-icon-link {
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .social-icon-item {
+    margin: 0rem .5rem !important;
+  }
+  .copyright {
+    padding: 0rem 3rem !important;
+  }
+  .copyright-text {
+    font-size: 14px !important;
+  }
+}
 /*/Gallery Footer Section/*/
 .gallery-page .footer-section {
   position: fixed !important;
@@ -737,6 +771,7 @@ a:hover {
   font-size: 10px;
   } 
 }
+
 /*--------------------------------------------
  PP T&C COOKIE POLICY        
 ---------------------------------------------*/
@@ -857,6 +892,8 @@ ol li {
   color: var(--drkm-link-color);
   letter-spacing: .1em;
 }
+
+
 /*--------------------------------------------
  NEWSLETTTER POPUP        
 ---------------------------------------------*/
@@ -1084,7 +1121,6 @@ ol li {
   box-shadow: none; /* removes any browser-applied shadow */
   border: none; /* removes browser applies a border */
 }
-
 
 /*--------------------------------------------
  COOKIE POPUP        
@@ -1394,6 +1430,71 @@ h2 {
   color: var(--white-color);
   border: 1px solid var(--primary-color);
 }
+@media (min-width: 992px) { /*sidebar before it hides*/
+  .wrapper .music-container {
+    width: calc(100% - 350px);
+    margin-left: 300px;
+  }
+  .sidebar-text {
+    justify-content: center;
+    text-align: right;
+  }
+  .layout-switcher-sidebar {
+    justify-content: right;
+  }
+}
+@media screen and (max-width: 991.98px) { 
+  .sidebar {
+    background: black;
+    width: 250px; 
+    transform: translateX(-100%); /* fully offscreen */
+    transition: transform 0.2s ease-in-out;
+    z-index: 99;
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(to bottom, transparent 20%, var(--secondary-color)) 1;
+    border-image-slice: 1;
+  }
+  .sidebar.active {
+    margin-left: 0px;
+    transform: translateX(0);
+  }
+  .sidebar.active .sidebar-divider {
+    visibility: visible !important;
+  }
+  .wrapper .music-container {
+    width: calc(100% - 4rem);
+    margin: 0rem 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .sidebar {
+     padding: 30rem 1.5rem 1.5rem 1.5rem !important;
+     width: 350px;
+    }
+    .sidebar-divider {
+     margin: 2rem .5rem;
+    }
+    .sidebar .nav-link {
+     font-size: 22px;
+     margin: 1rem .9rem;
+    }
+
+}
+@media screen and (max-width: 767.98px) {
+  .sidebar {
+    width: 250px;
+    padding: 20rem 1.5rem 1.5rem 1.5rem !important;
+  }
+  .album-container-text h6 {
+    font-size: 18px;
+  }
+  .song-btn {
+    font-size: 10px;
+    margin: .5rem 0rem .17rem;
+    line-height: 1.2;
+  }
+}
+
 
 /*/ Music main page[LIST/GRID responsiveness]/*/
 .music-page #album-container.grid-view {
@@ -1484,6 +1585,15 @@ h2 {
 .music-details .album-thumbnail {
   border-radius: var(--border-radius-xxsm);
 }
+@media screen and (max-width: 767.98px) {
+  .minfo .music-container {
+    padding: 2rem !important;
+  }
+  .music-details p {
+    font-size: 16px;
+    font-weight: var(--font-weight-light);
+  }
+}
 
 /*/ Streaming Services/*/
 .streaming-services .music-container {
@@ -1505,6 +1615,11 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: contain;  /* keep aspect ratio */
+}
+@media screen and (max-width: 991.98px) {
+  .streaming-service {
+    font-size: 16px;
+  }
 }
 
 /*/ Music video Carousel/*/
@@ -1548,6 +1663,16 @@ h2 {
 }
 .thumb-row img.active {
   border: 2px solid var(--link-hover-color);
+}
+@media screen and (max-width: 991.98px) {
+  .music-video-carousel .music-container {
+    padding: 0 !important;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .music-video-carousel .music-container {
+    padding: 0 !important;
+  }
 }
 
 /*/ Music lyrics/*/
@@ -1613,7 +1738,6 @@ h2 {
   
   
 }
-
 .lyrics-wrapper pre {
   font-family: inherit;
   font-size: inherit;
@@ -1623,20 +1747,16 @@ h2 {
   word-break: break-word;
   overflow-wrap: break-word;
 }
-
 .lyrics-wrapper::-webkit-scrollbar {
   width: 6px;
 }
-
 .lyrics-wrapper::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .lyrics-wrapper::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 3px;
 }
-
 .typewriter-caret {
   display: inline-block;
   width: 8px;
@@ -1644,34 +1764,37 @@ h2 {
   animation: blink 1s step-start infinite;
   vertical-align: bottom;
 }
-
 @keyframes blink {
-  50% {
-    background-color: transparent;
-  }
+  50% {background-color: transparent;}
 }
-
-@media (max-width: 1199px) {
+@media (max-width: 992px) {
   .lyrics-title {
-    background: var(--drkm-cont6-color);
     display: block;
-    margin-bottom: 1rem;
-    max-height: 200px !important;
     overflow: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
-    /* Firefox thin scrollbar */
     scrollbar-color: gray transparent;
-    /* Firefox scrollbar colors */
+    max-height: 200px !important;
+    border-radius: var(--border-radius-xsm);
+    background: var(--drkm-cont6-color);
+    margin-bottom: 1rem;
   }
-
-
-  
-
   .ep .nav-item {
     margin-bottom: auto !important;
   }
+  .lyrics-wrapper {
+    padding-left: 2rem;
+    font-size: var(--h5-font-size);
+  }
 }
+@media screen and (max-width: 767.98px) {
+  .lyrics-wrapper {
+    padding-left: 2rem;
+    font-size: var(--h5-font-size);
+  }
+}
+
+
 
 /*-----------------------------------------------------------------------------------------
   NOVITA PAGE  
@@ -1924,11 +2047,42 @@ h2 {
 }
 
 
+@media screen and (max-width: 991.98px) { 
+    
+    
+    
+    .item .carousel-caption h5{
+    font-size: 16px;
+    }
+    .item .carousel-caption p{
+        font-size: 14px;
+     line-height:1;
+    }
+     .top-news .carousel-caption {
+        padding: 0;
+    }
+    .top-news .carousel-caption p{
+        font-size: 12px;
+    }
+     .top-news .carousel-caption h5{
+        font-size: 14px;
+    }
+
+}
 
 
 
 
 
+.simple-nav .nav-link {
+    background: transparent !important;
+    border: none !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+}
 
 
 

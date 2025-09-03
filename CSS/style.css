@@ -1678,25 +1678,30 @@ h2 {
 /*/ Music lyrics/*/
 .music-lyrics .music-container {
   background: rgb(95, 45, 47);
-  padding: 0 !important;
+  padding: 0rem !important;
 }
 .lyrics-title {
   font-family: var(--sidebar-font-family);
+  height: 100%;
   display: block;
   overflow: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: gray transparent;
+  padding: 1rem;
+  background:rgba(22, 11, 11, 0.7); 
 }
 .lyrics-title .nav,
 .lyrics-title .navbar-item {
   display: block;
 }
 .lyrics-title .nav-link {
-  color: var(--drkm-secondary-color);
-  font-size: var(--lyrics-font-size);
-  font-weight: var(--font-weight-normal);
-  font-family: var(--monotype-font-family);
+  color: rgb(185, 153, 151);
+  letter-spacing: .05em;
+  font-size: 20px;
+  font-weight: var(--font-weight-xbold);
+  
+ 
 }
 .lyrics-title .nav-link:active {
   color: var(--secondary-color);
@@ -1726,8 +1731,9 @@ h2 {
   overflow: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: gray transparent;
-  padding: 0;
+  scrollbar-color: rgb(69, 33, 34) transparent;
+  padding-top: 1rem;
+  padding-left: 2rem;
   margin: 0;
   color: rgb(241, 178, 177);
   font-size: var(--h4-font-size);
@@ -1735,8 +1741,6 @@ h2 {
   text-align: justify;
   letter-spacing: .05em;
   white-space: pre-wrap;
-  
-  
 }
 .lyrics-wrapper pre {
   font-family: inherit;
@@ -1773,17 +1777,15 @@ h2 {
     overflow: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: gray transparent;
+    scrollbar-color: rgb(69, 33, 34) transparent;
     max-height: 200px !important;
-    border-radius: var(--border-radius-xsm);
-    background: var(--drkm-cont6-color);
-    margin-bottom: 1rem;
+    
   }
   .ep .nav-item {
     margin-bottom: auto !important;
   }
   .lyrics-wrapper {
-    padding-left: 2rem;
+   
     font-size: var(--h5-font-size);
   }
 }

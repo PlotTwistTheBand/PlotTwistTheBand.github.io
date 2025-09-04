@@ -625,7 +625,7 @@ a:hover {
   position: fixed;
   z-index: 9999 !important;
   bottom: 20px;
-  right: 20px;
+  right: 26px;
   border: none;
   background: transparent !important;
   color: var(--white-color);
@@ -2546,3 +2546,161 @@ h2 {
 }
 
 
+
+    /* Base */
+   
+    .linktree {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      
+      display: grid;
+      justify-items: center;
+    }
+
+    /* Container */
+    .cardtree {
+      display: inline-block;
+      justify-items: center;
+      width: 100%;
+      max-width: 575px;
+      height: 100%;
+      padding: .5rem;
+      background: var(--drkm-cont2-color);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius:var(--border-radius-xsm);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+     
+    }
+
+
+    .linktree-header {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      background: red;
+      margin-top: 3rem;
+    }
+    .pfp-wrap {
+    
+    
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      
+      margin-bottom: 2rem;
+    }
+    .pfp {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .title {
+      line-height: 1.1;
+
+    }
+    .name {
+      font-family: var(--font-display);
+      text-align: center;
+      font-size: clamp(24px, 3.5vw, 36px);
+      letter-spacing: .04em;
+      margin: 0 0 1rem;
+    }
+    .cardtree .social-icon {
+      padding: 0rem 1rem;
+      margin: .5rem 0rem;
+    }
+    .cardtree .social-icon-item {
+      display: inline-block;
+      vertical-align: top;
+      list-style: none;
+      margin: 0rem .2rem;
+    }
+
+    .cardtree .social-icon-link {
+      display: block;
+      font-size: 25px;
+
+      margin: 0;
+      border-radius: var(--border-radius-large);
+      background: transparent;
+      color: var(--drkm-text-color);
+      text-align: center;
+      line-height: 35px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .cardtree .social-icon-link:hover {
+      background: transparent;
+      color: var(--primary-color);
+    }
+    
+
+   
+    .lnktr-item {
+
+      background: black;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--border-radius-xsm);
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(179, 179, 179, 0.5);
+      color: var(--drkm-text-color);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .lnktr-item:hover {
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 4px 10px rgba(179, 179, 179, 0.781);
+      transform: translateY(-1px);
+      color: var(--drkm-text-color);
+    }
+    .lnktr-icon {
+      font-size: 28px;
+      
+    }
+
+
+
+    .thumb {
+      width: 44px; height: 44px; border-radius: 10px;
+      overflow: hidden; border: 1px solid var(--border);
+      background: #000;
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .meta { display: grid; gap: 4px; }
+    .title-sm { font-weight: 600; }
+    .desc { font-size: 13px; color: var(--muted); }
+    .pill {
+      font-size: 12px;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--card);
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 14px 28px 24px;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed var(--border);
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .brand { color: var(--brand); text-decoration: none; }
+    .brand:hover { text-decoration: underline; }
+
+    /* Responsive bits */
+    @media (max-width: 520px) {
+      .header { grid-template-columns: 64px 1fr auto; }
+      .pfp-wrap { width: 64px; height: 64px; }
+      .social span { display: none; } /* only icons on small screens */
+      .link { grid-template-columns: 40px 1fr auto; }
+      .thumb { width: 40px; height: 40px; }
+    }

@@ -501,11 +501,18 @@ a:hover {
   width: 100%;
   color: var(--drkm-text-color);
 }
+
 .footer-section .row {
   background-color: black;
   border-radius: var(--border-radius-medium);
   border-top: 1px solid var(--dark-color);
   z-index: 9997;
+   display: flex;
+  align-items: center;
+  justify-content: center; /* keeps social + nav centered */
+  position: relative; /* important! */
+   margin-left: 0;
+  margin-right: 0;
 }
 .social-icon {
   position: relative;
@@ -569,6 +576,37 @@ a:hover {
 .copyright-text a {
   color: var(--drkm-link-color);
 }
+.cookie-icon-container {
+  position: absolute; /* ensures it doesn't affect flex distribution */
+  left: 1rem;
+  bottom: 10%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+
+}
+.cookie-icon-footer {
+  width: 35px;
+  height: auto;
+  transition: transform 0.2s;
+}
+.cookie-icon-footer:hover {
+  animation: wiggle 0.7s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg);}
+  10%  { transform: rotate(2deg);} 
+  25% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  75% { transform: rotate(-10deg); }
+  90%  { transform: rotate(2deg);}
+  100% { transform: rotate(0deg); }
+}
+
 /*/Homepage Footer Section/*/
 .home-page .footer-section {
   position: fixed !important;
@@ -647,6 +685,7 @@ a:hover {
   .copyright-text {
     font-size: 14px !important;
   }
+
 }
 /*/Gallery Footer Section/*/
 .gallery-page .footer-section {
@@ -833,6 +872,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 0;
+  overflow-x: hidden;
 }
 .terminiecondizioni .container-fluid,
 .privacy-policy .container-fluid,
@@ -2504,3 +2544,5 @@ h2 {
 .back-top-icon {
   font-size: var(--h2-font-size);
 }
+
+

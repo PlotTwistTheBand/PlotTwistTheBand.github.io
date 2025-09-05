@@ -588,6 +588,14 @@ a:hover {
   height: 35px;
 
 }
+.cookie-icon-popup {
+  width: 20px;
+  height: auto;
+  transition: transform 0.2s;
+}
+.cookie-icon-popup:hover {
+  animation: wiggle 0.7s ease-in-out;
+}
 .cookie-icon-footer {
   width: 35px;
   height: auto;

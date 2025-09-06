@@ -266,34 +266,82 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('resize', () => {
     positionIcons(true);
   });
-});
-document.querySelectorAll('.gallery-popup').forEach(gallery => {
-  const carousel = gallery.querySelector('.carousel');
-  const thumbnails = gallery.querySelectorAll('.thumb-row img');
 
-  // Function to update active thumbnail
-  const updateActiveThumb = (index) => {
+  // Custom gallery logic replacing Bootstrap carousel
+  document.querySelectorAll('.gallery-popup').forEach(gallery => {
+    const mainImage = gallery.querySelector('.gallery-main img');
+    const thumbnails = Array.from(gallery.querySelectorAll('.thumb-row img'));
+    const prevBtn = gallery.querySelector('.gallery-prev');
+    const nextBtn = gallery.querySelector('.gallery-next');
+    let currentIndex = 0;
+
+    // Log number of thumbnails for each gallery
+    if (!thumbnails || thumbnails.length === 0) {
+      console.log(`[GalleryPopup] No thumbnails found for gallery id="${gallery.id}"`);
+      return; // Skip initialization if no thumbnails
+    } else {
+      console.log(`[GalleryPopup] Found ${thumbnails.length} thumbnails for gallery id="${gallery.id}"`);
+    }
+
+    function updateActiveThumb(index) {
+      if (!thumbnails || thumbnails.length === 0) return;
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+    }
+
+    function showImage(index) {
+      // Guard for empty or missing thumbnails
+      if (!thumbnails || thumbnails.length === 0) {
+        console.warn(`[GalleryPopup] showImage called but no thumbnails for gallery id="${gallery.id}"`);
+        return;
+      }
+      if (index < 0) index = thumbnails.length - 1;
+      if (index >= thumbnails.length) index = 0;
+      currentIndex = index;
+      console.log('showImage called with index:', index, 'for gallery id=', gallery.id);
+      const newSrc = thumbnails[index].getAttribute('src');
+      if (mainImage && newSrc) {
+        mainImage.src = newSrc;
+        mainImage.setAttribute('data-index', index);
+      }
+      updateActiveThumb(index);
+    }
+
     thumbnails.forEach((thumb, i) => {
-      thumb.classList.toggle('active', i === index);
+      thumb.addEventListener('click', () => {
+        showImage(i);
+      });
     });
-  };
 
-  // Initialize first thumbnail as active
-  updateActiveThumb(0);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showImage(currentIndex - 1);
+      });
+    }
 
-  // On thumbnail click, change carousel slide
-  thumbnails.forEach((thumb, i) => {
-    thumb.addEventListener('click', () => {
-      const carouselInstance = bootstrap.Carousel.getInstance(carousel);
-      carouselInstance.to(i);
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showImage(currentIndex + 1);
+      });
+    }
+
+    // Keyboard navigation when popup is open
+    document.addEventListener('keydown', (e) => {
+      if (getComputedStyle(gallery).display !== 'flex') return;
+      if (!thumbnails || thumbnails.length === 0) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showImage(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showImage(currentIndex + 1);
+      }
     });
-  });
 
-  // On carousel slide, update thumbnail active
-  carousel.addEventListener('slid.bs.carousel', (event) => {
-    updateActiveThumb(event.to);
+    // Initialize first image only if thumbnails exist
+    if (thumbnails.length > 0) {
+      showImage(0);
+    }
   });
 });
-
-
-

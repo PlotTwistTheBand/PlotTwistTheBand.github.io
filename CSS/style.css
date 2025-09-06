@@ -894,6 +894,7 @@ a:hover {
   background-color: var(--drkm-color);
   max-width: 1300px;
   height: 60vh;
+  
 }
 .policy-title {
   display: flex;
@@ -924,7 +925,7 @@ a:hover {
   overflow-y: auto;
   scrollbar-width: none;
   max-height: 60vh;
-  padding: 2rem;
+  padding: 1rem 2rem;
   color: var(--drkm-text-color);
 }
 .policy-text h1 {

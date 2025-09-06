@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateIconSize() {
     // Icon size scales from maxIcon (large screens) to minIcon (small)
     const vw = Math.max(window.innerWidth, 360);
-    iconWidth = Math.max(minIcon, Math.min(maxIcon, Math.floor(vw/14)));
+    iconWidth = Math.max(minIcon, Math.min(maxIcon, Math.floor(vw / 14)));
     iconHeight = iconWidth;
     icons.forEach(icon => {
       icon.style.width = iconWidth + 'px';
@@ -34,34 +34,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Column-first grid layout ---
-  function positionIcons(reset=false) {
-  updateIconSize();
+  function positionIcons(reset = false) {
+    updateIconSize();
 
-  const maxRows = 4; // maximum rows before wrapping to next column
-  const availableHeight = window.innerHeight - padding;
-  const rowsThatFit = Math.max(1, Math.floor(availableHeight / (iconHeight + padding)));
-  const rows = Math.min(maxRows, rowsThatFit); // never exceed 4 rows
+    const maxRows = 4; // maximum rows before wrapping to next column
+    const availableHeight = window.innerHeight - padding;
+    const rowsThatFit = Math.max(1, Math.floor(availableHeight / (iconHeight + padding)));
+    const rows = Math.min(maxRows, rowsThatFit); // never exceed 4 rows
 
-  icons.forEach((icon, i) => {
-    const row = i % rows;             // vertical position
-    const col = Math.floor(i / rows); // horizontal position
-    icon.style.position = "absolute";
-    icon.style.top = (padding + row * (iconHeight + padding)) + "px";
-    icon.style.left = (padding + col * (iconWidth + padding)) + "px";
-    icon.style.transition = reset ? "all 0.3s cubic-bezier(.77,0,.18,1.01)" : "";
-    icon.style.zIndex = 100;
-    if (reset) {
-      originalPositions[i] = { top: icon.style.top, left: icon.style.left };
+    icons.forEach((icon, i) => {
+      const row = i % rows;             // vertical position
+      const col = Math.floor(i / rows); // horizontal position
+      icon.style.position = "absolute";
+      icon.style.top = (padding + row * (iconHeight + padding)) + "px";
+      icon.style.left = (padding + col * (iconWidth + padding)) + "px";
+      icon.style.transition = reset ? "all 0.3s cubic-bezier(.77,0,.18,1.01)" : "";
+      icon.style.zIndex = 100;
+      if (reset) {
+        originalPositions[i] = { top: icon.style.top, left: icon.style.left };
+      }
+    });
+
+    if (reset || originalPositions.length !== icons.length) {
+      originalPositions = icons.map(icon => ({
+        top: icon.style.top,
+        left: icon.style.left
+      }));
     }
-  });
-
-  if (reset || originalPositions.length !== icons.length) {
-    originalPositions = icons.map(icon => ({
-      top: icon.style.top,
-      left: icon.style.left
-    }));
   }
-}
   // Initial grid
   positionIcons(true);
 
@@ -287,6 +287,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!thumbnails || thumbnails.length === 0) return;
       thumbnails.forEach((thumb, i) => {
         thumb.classList.toggle('active', i === index);
+        if (i === index) {
+          // scroll the active thumbnail into view
+          thumb.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
+        }
       });
     }
 

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('trash-popup')) return;
     const alertPopup = document.createElement('div');
     alertPopup.id = 'trash-popup';
-    alertPopup.textContent = "Non puoi eliminare questo file!";
+    alertPopup.textContent = "Perché vuoi cancellare queste foto? Sei fuori di testa?";
     alertPopup.style.position = 'fixed';
     alertPopup.style.top = '50%';
     alertPopup.style.left = '50%';

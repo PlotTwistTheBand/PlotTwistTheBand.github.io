@@ -2527,40 +2527,44 @@ display: none;
 
 
 
-/* Base */
+
+
+
+
+
 
 .linktree {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   justify-items: center;
+  background-image: url("/images/Linktr_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
-/* Container */
 .cardtree {
   display: inline-block;
   justify-items: center;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
   width: 100%;
   max-width: 575px;
   height: 100%;
   padding: .5rem 2rem;
-  background-image: url("/images/PlotTwistLogoBlackBLURRED.png");
-  background-position: center center;
-  background-size: cover;
+  background: #ffffff58;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--border-radius-xsm);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 @media screen and (max-width: 767.98px) {
   .cardtree {
   padding: .5rem .5rem;
   }
- }
-
+}
 
 .linktree-header {
   display: flex;
@@ -2569,58 +2573,39 @@ display: none;
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
-
-.pfp-wrap {
+.lnktr-logo {
   width: auto;
-  height: 40px;
+  height: 60px;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-
-.pfp {
+.lnktr-logo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-.title {
-  line-height: 1.1;
-}
-
-.name {
-  font-family: var(--font-display);
-  text-align: center;
-  font-size: clamp(24px, 3.5vw, 36px);
-  letter-spacing: .04em;
-  margin: 0 0 1rem;
-}
-
 .cardtree .social-icon {
   padding: 0rem 1rem;
-  margin: .5rem 0rem;
+  margin: .2rem 0rem;
 }
-
 .cardtree .social-icon-item {
   display: inline-block;
   vertical-align: top;
   list-style: none;
-  margin: 0rem .2rem;
+  margin: 0rem .3rem;
 }
-
 .cardtree .social-icon-link {
   display: block;
-  font-size: 25px;
-  margin: 0;
+  font-size: 20px;
   border-radius: var(--border-radius-large);
   background: transparent;
   color: var(--drkm-text-color);
   text-align: center;
-  line-height: 35px;
+  line-height: 1;
   transition: all 0.3s ease-in-out;
 }
-
 .cardtree .social-icon-link:hover {
   background: transparent;
   color: var(--primary-color);
@@ -2629,8 +2614,8 @@ display: none;
 
 
 .lnktr-item {
-  background: black;
-  padding: .5rem 1rem 1rem;
+  background: rgba(98, 91, 80, 0.74);
+  padding: .5rem 1rem .5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--border-radius-xsm);
   text-decoration: none;
@@ -2642,36 +2627,42 @@ display: none;
   color: var(--drkm-text-color);
   transition: transform .08s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-
-
 .lnktr-item:hover {
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 10px rgba(179, 179, 179, 0.781);
   transform: translateY(-1px);
   color: var(--drkm-text-color);
+  background: rgba(98, 91, 80, 0.784);
 }
 
 .lnktr-icon {
-  font-size: 24px;
+  width: 30px;
+  font-size: 17px;
+  margin-right: .3rem;
+  
 }
-
-.lnktr-item .streaming-service-logo {
-  width: 35px;
-  height: auto;
-  margin-right: 10px;
-}
-
 
 .lnktr-item-title {
   display: inline-flex;
   justify-content: space-between;
 }
-.lnktr-item-title h6{
-  font-size: 16px;
+.lnktr-item h6{
+  font-size: 18px;
   margin: 0;
   bottom: 10%;
   line-height: 1;
   align-content: center;
+  cursor: default;
+  letter-spacing: .1em;
+}
+.lnktr-meta h6{
+  font-size: 18px;
+  letter-spacing: .1em;
+  margin: 0;
+  bottom: 10%;
+  line-height: 1;
+  align-content: center;
+  cursor: default;
 }
 
 
@@ -2679,7 +2670,8 @@ display: none;
 .lnktrthumb {
   width: 150px;
   height: 150px;
-  border-radius: 10px;
+  margin-top: .5rem;
+  border-radius: 5px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: #000;
@@ -2696,31 +2688,19 @@ display: none;
 .lnktr-meta {
   display: grid;
   gap: 4px;
-  margin-top: 1rem;
+  margin-top: .5rem;
+}
+.lnktr-meta .nav-link {
+  color: white;
+  font-weight: var(--font-weight-normal);
 }
 
-
-.desc {
-  font-size: 13px;
-  color: var(--darkm-text-color);
-  font-weight: var(--font-weight-thin);
-  padding-bottom: 1rem;
-}
-
-.lnktrpill {
-  font-size: 12px;
-  border: 1px solid var(--border);
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: red;
-  white-space: nowrap;
-}
 
 /* Footer */
 .lnktrfooter {
   margin-top: 2rem;
   padding: 14px 28px 24px;
-  color: white;
+  color: var(--yellow2);
   font-size: 12px;
   display: flex;
   justify-content: space-between;
@@ -2728,15 +2708,21 @@ display: none;
   border-top: 1px dashed var(--border);
   gap: 8px;
   flex-wrap: wrap;
+ 
 }
 
-.brand {
-  color: var(--brand);
+.lnktrfooter .copyright-text a {
+  color: var(--yellow2);
   text-decoration: none;
 }
 
-.brand:hover {
-  text-decoration: underline;
+.lnktrfooter .copyright-text a:hover {
+  color: var(--yellow1);
+  text-decoration: none;
 }
 
-/* Responsive bits */
+.lnktrfooter .copyright-text {
+  font-size: 12px;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: .1em;
+}

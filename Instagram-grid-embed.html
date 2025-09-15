@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Instagram profile grid — embed</title>
+  <style>
+    :root{--bg:#fff;--muted:#666;--accent:#262626}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--accent); margin:0;padding:24px}
+    .card{max-width:980px;margin:0 auto;border:1px solid #eee;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.04)}
+    .header{display:flex;gap:18px;padding:22px;align-items:center}
+    .avatar{width:84px;height:84px;border-radius:50%;flex:0 0 84px;overflow:hidden;background:#ddd}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .meta{flex:1}
+    .meta h1{margin:0;font-size:20px}
+    .meta p.handle{margin:6px 0;color:var(--muted)}
+    .stats{display:flex;gap:16px;margin-top:8px}
+    .stat{font-weight:600}
+    .bio{padding:0 22px 18px;color:var(--muted);font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#000}
+    .grid button{border:0;padding:0;background:none}
+    .tile{width:100%;aspect-ratio:1/1;position:relative;overflow:hidden;background:#111}
+    .tile img, .tile video{width:100%;height:100%;object-fit:cover;display:block}
+    .overlay{position:absolute;left:8px;top:8px;background:rgba(0,0,0,0.45);color:#fff;padding:4px 7px;border-radius:12px;font-size:12px;display:flex;gap:6px;align-items:center}
+    .load-row{padding:14px 22px;display:flex;justify-content:flex-end}
+    .btn{background:#0095f6;color:white;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);z-index:999}
+    .lightbox.show{display:flex}
+    .lightbox-content{max-width:920px;width:92%;background:#fff;padding:18px;border-radius:8px}
+    .lightbox-media{width:100%;max-height:70vh;display:block}
+    .close{position:absolute;right:18px;top:18px;background:#fff;border-radius:6px;border:0;padding:6px 8px;cursor:pointer}
+
+    @media (max-width:720px){
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .header{padding:14px}
+    }
+    @media (max-width:520px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .avatar{width:62px;height:62px;flex:0 0 62px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="insta-embed">
+  <div class="header">
+    <div class="avatar" id="avatar"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><rect width='100%' height='100%' fill='%23ddd'/></svg>" alt="avatar"></div>
+    <div class="meta">
+      <h1 id="displayName">Plot Twist</h1>
+      <div class="handle" style="display:flex;align-items:center;gap:10px">
+        <p class="handle" id="username">@plot.twist.the.band</p>
+      </div>
+      <div class="stats">
+        <div><div class="stat" id="postsCount">—</div><div style="font-size:12px;color:var(--muted)">posts</div></div>
+        <div><div class="stat" id="followersCount">—</div><div style="font-size:12px;color:var(--muted)">followers</div></div>
+        <div><div class="stat" id="followingCount">—</div><div style="font-size:12px;color:var(--muted)">following</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bio" id="bio">Loading bio…</div>
+
+  <div class="grid" id="grid">
+    <!-- tiles inserted here -->
+  </div>
+  <div class="load-row">
+    <button class="btn" id="loadMore">Load images</button>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+  <button class="close" id="closeLb">✕</button>
+  <div class="lightbox-content" id="lbContent">
+    <img id="lbMedia" class="lightbox-media" alt="">
+    <div id="lbCaption" style="margin-top:8px;color:#333;font-size:14px"></div>
+  </div>
+</div>
+
+<script>
+// Example profile data - replace these with real values or inject via server
+const profileData = {
+  username: 'plot.twist.the.band',
+  displayName: 'Plot Twist',
+  avatar: 'https://via.placeholder.com/300?text=Avatar',
+  bio: 'Official account of Plot Twist — new releases, tour dates & behind the scenes. 🎸\nLink: https://linktr.ee/plottwist',
+  posts: 29,
+  followers: '1.2k',
+  following: 107,
+  // posts array: {id, type:'image'|'video', thumb, url, caption, likes}
+  feed: [
+    {id:'p1',type:'image',thumb:'https://picsum.photos/id/1015/800/800',url:'https://picsum.photos/id/1015/1200/1200',caption:'Soundcheck vibes',likes:120},
+    {id:'p2',type:'image',thumb:'https://picsum.photos/id/1016/800/800',url:'https://picsum.photos/id/1016/1200/1200',caption:'On stage',likes:231},
+    {id:'p3',type:'image',thumb:'https://picsum.photos/id/1018/800/800',url:'https://picsum.photos/id/1018/1200/1200',caption:'Desert photoshoot',likes:312},
+    {id:'p4',type:'image',thumb:'https://picsum.photos/id/1020/800/800',url:'https://picsum.photos/id/1020/1200/1200',caption:'Backstage',likes:88},
+    {id:'p5',type:'image',thumb:'https://picsum.photos/id/1024/800/800',url:'https://picsum.photos/id/1024/1200/1200',caption:'Merch drop',likes:44},
+    {id:'p6',type:'image',thumb:'https://picsum.photos/id/1025/800/800',url:'https://picsum.photos/id/1025/1200/1200',caption:'Band portrait',likes:305}
+  ]
+}
+
+// Render profile header
+document.getElementById('displayName').textContent = profileData.displayName || ''
+document.getElementById('username').textContent = '@' + (profileData.username || '')
+document.getElementById('avatar').querySelector('img').src = profileData.avatar
+document.getElementById('bio').innerText = profileData.bio
+document.getElementById('postsCount').textContent = profileData.posts
+document.getElementById('followersCount').textContent = profileData.followers
+document.getElementById('followingCount').textContent = profileData.following
+
+const grid = document.getElementById('grid')
+
+function makeTile(item){
+  const btn = document.createElement('button')
+  btn.className='tile-btn'
+  btn.innerHTML = `<div class="tile">
+    ${item.type === 'video' ? `<video src="${item.thumb}" muted playsinline preload="metadata"></video>` : `<img src="${item.thumb}" loading="lazy" alt="${escapeHtml(item.caption||'')}">`}
+    <span class="overlay">❤ ${item.likes || 0}</span>
+  </div>`
+  btn.onclick = ()=> openLightbox(item)
+  return btn
+}
+
+function renderGrid(feed){
+  grid.innerHTML = ''
+  feed.forEach(item => {
+    grid.appendChild(makeTile(item))
+  })
+}
+
+renderGrid(profileData.feed)
+
+// Lightbox logic
+const lb = document.getElementById('lightbox')
+const lbMedia = document.getElementById('lbMedia')
+const lbCaption = document.getElementById('lbCaption')
+const closeLb = document.getElementById('closeLb')
+function openLightbox(item){
+  lbMedia.src = item.url || item.thumb
+  lbMedia.alt = item.caption || ''
+  lbCaption.textContent = item.caption || ''
+  lb.classList.add('show')
+  lb.setAttribute('aria-hidden','false')
+}
+function closeLightbox(){ lb.classList.remove('show'); lb.setAttribute('aria-hidden','true'); lbMedia.src = '' }
+closeLb.addEventListener('click', closeLightbox)
+lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLightbox() })
+
+// Load images button - useful when you want to lazy inject real data
+document.getElementById('loadMore').addEventListener('click',()=>{
+  // Example: replace grid with higher-resolution images
+  profileData.feed = profileData.feed.map(x=>({ ...x, thumb: x.url }))
+  renderGrid(profileData.feed)
+})
+
+// small helper
+function escapeHtml(s){ return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;') : '' }
+
+</script>
+
+<!--
+Server integration notes (example):
+
+Node.js (express) example to fetch Instagram oEmbed for a post and return JSON to the embed:
+
+const express = require('express')
+const fetch = require('node-fetch')
+const app = express()
+app.get('/fetch-posts', async (req,res)=>{
+  // You must set up an Instagram App and get an access token for oembed or Basic Display
+  // Here's an example using a list of post URLs you maintain on the server
+  const postUrls = [ 'https://www.instagram.com/p/XXXXXXXX/', ... ]
+  const results = []
+  for(const url of postUrls){
+    const r = await fetch(`https://graph.facebook.com/v12.0/instagram_oembed?url=${encodeURIComponent(url)}&access_token=${process.env.FB_APP_TOKEN}`)
+    const j = await r.json()
+    results.push({id:j.author_id, thumb:j.thumbnail_url || j.thumbnail_url, url:j.url, caption:j.title})
+  }
+  res.json({profile: {username:'plot.twist.the.band', avatar:'...', bio:'...'}, feed: results})
+})
+
+Then in the embed, call fetch('/fetch-posts').then(r=>r.json()).then(data=>{ /* inject into profileData and render */ })
+
+Important: Instagram blocks client-side scraping. Use server-side and cache results.
+-->
+
+</body>
+</html>

@@ -2542,6 +2542,8 @@ display: none;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .cardtree {
@@ -2728,7 +2730,7 @@ display: none;
 }
 @media screen and (max-width: 767.98px) {
   .lnktr-logo {
-  width: 30px;
+  width: 50px;
   height: auto;
   margin-bottom: 1rem;
 }

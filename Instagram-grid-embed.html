@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Instagram profile grid — embed</title>
+  <link rel="stylesheet" href="/CSS/bootstrap-icons.css">
   <style>
     :root {
       --bg: #fff;
@@ -186,6 +187,10 @@
       padding: 6px 8px;
       cursor: pointer
     }
+    .overlay .bi-heart {
+  color: white;
+  font-size: 14px; /* adjust as needed */
+}
 
     @media (max-width:720px) {
       .grid {
@@ -347,7 +352,7 @@
     ${item.type === 'video'
           ? `<video src="${item.thumb}" muted playsinline preload="metadata"></video>`
           : `<img src="${item.thumb}" loading="lazy" alt="${escapeHtml(item.caption || '')}">`}
-    <span class="overlay">❤ ${item.likes || 0}</span>
+    <span class="overlay"><i class="bi bi-heart-fill"></i> ${item.likes || 0}</span>
   </div>`;
       return a;
     }

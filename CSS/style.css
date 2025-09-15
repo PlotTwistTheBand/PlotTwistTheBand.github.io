@@ -2729,11 +2729,7 @@ display: none;
   letter-spacing: .1em;
 }
 @media screen and (max-width: 767.98px) {
-  .lnktr-logo {
-  width: 50px;
-  height: auto;
-  margin-bottom: 1rem;
-}
+ 
 
 .lnktr-meta .nav {
   justify-content: center;

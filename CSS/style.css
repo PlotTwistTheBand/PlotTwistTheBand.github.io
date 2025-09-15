@@ -2538,16 +2538,19 @@ display: none;
   justify-items: center;
   background-image: url("/images/Linktr_1.png");
   background-size: cover;
-  background-position: top center;
-  max-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  overflow-x: none;
 }
 
 .cardtree {
   display: inline-block;
   justify-items: center;
-  overflow: hidden;
-  overflow-y: auto;
+
   scrollbar-width: none;
   width: 100%;
   max-width: 575px;
@@ -2575,10 +2578,12 @@ display: none;
   margin-top: 5rem;
 }
 .lnktr-logo {
-  width: auto;
-  height: 60px;
-  overflow: hidden;
+  width: 100%;       /* let it be as wide as the card */
+  max-width: 180px;  /* optional: keep it from getting too big */
+  height: auto;      /* no fixed height */
   margin-bottom: 1rem;
+  overflow: visible; /* don’t hide anything */
+
 }
 .lnktr-logo-img {
   width: 100%;
@@ -2726,7 +2731,14 @@ display: none;
   letter-spacing: .1em;
 }
 @media screen and (max-width: 767.98px) {
- 
+ .lnktr-logo {
+  width: 100%;       /* let it be as wide as the card */
+  max-width: 100px;  /* optional: keep it from getting too big */
+  height: auto;      /* no fixed height */
+  margin-bottom: 1rem;
+  overflow: visible; /* don’t hide anything */
+
+}
 
 .lnktr-meta .nav {
   justify-content: center;

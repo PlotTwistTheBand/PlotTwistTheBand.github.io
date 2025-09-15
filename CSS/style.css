@@ -2531,8 +2531,6 @@ display: none;
 
 
 
-
-
 .linktree {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2540,7 +2538,6 @@ display: none;
   justify-items: center;
   background-image: url("/images/Linktr_1.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: top center;
   max-height: 100vh;
   overflow: hidden;

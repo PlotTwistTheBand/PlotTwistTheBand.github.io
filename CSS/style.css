@@ -2618,7 +2618,7 @@ display: none;
 
 
 .lnktr-item {
-  background: rgba(98, 91, 80, 0.74);
+  background: rgba(98, 91, 80, 0.919);
   padding: .5rem 1rem .5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--border-radius-xsm);
@@ -2636,7 +2636,7 @@ display: none;
   box-shadow: 0 4px 10px rgba(179, 179, 179, 0.781);
   transform: translateY(-1px);
   color: var(--drkm-text-color);
-  background: rgba(98, 91, 80, 0.784);
+  background: rgba(83, 77, 68, 0.939);
 }
 
 .lnktr-icon {

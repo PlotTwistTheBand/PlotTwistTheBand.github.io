@@ -2619,7 +2619,7 @@ display: none;
 
 .lnktr-item {
   background: rgba(98, 91, 80, 0.919);
-  padding: .5rem 1rem .5rem;
+  padding: .5rem 2rem .5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--border-radius-xsm);
   text-decoration: none;
@@ -2678,7 +2678,7 @@ display: none;
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: #000;
+  background: transparent;
 }
 
 .lnktrthumb img {

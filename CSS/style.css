@@ -1818,7 +1818,7 @@ h2 {
   margin-bottom: 3rem !important;
 }
 .lyrics-container {
-  border-radius: var(--border-radius-xsm);
+
   display: none;
   overflow: hidden;
   cursor: default;
